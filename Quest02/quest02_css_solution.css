@@ -84,4 +84,16 @@ section{
 @media (min-height: 550px){ .sch_logo{
 
 }  }
-::-webkit-textfield-decoration-container
+
+element.style {
+}
+.sch_wrap {
+    position: relative;
+    height: 52px;
+    padding: 1px;
+    background: linear-gradient(
+            105deg, rgb(3, 207, 93), rgb(3, 199, 90) 100%);
+    border-radius: 26px;
+    box-shadow: rgb(117 145 181 / 12%) 0px 5px 10px 0px;
+    box-sizing: border-box;
+}
