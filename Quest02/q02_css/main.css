@@ -1,0 +1,73 @@
+.body-wrap{
+    margin: 0 auto;
+    width: 600px;
+}
+.searchBar{
+    display: block;
+    width: 100%;
+    height: 3rem;
+    position: relative;
+}
+.SearchBar_Input{
+    padding-left: 0.5rem;
+    width: inherit;
+    height: inherit;
+    border: 1px solid var(--main-color);
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+.SearchBar_Input::placeholder{
+    color: #ddd;
+}
+header #titleLogo{
+    text-align: center;
+    font-size: 2.5em;
+    font-weight: bolder;
+    font-family: Impact;
+    color: var(--main-color);
+}
+.SearchBar_Input_icon-wrap{
+    position: absolute;
+    top:0;
+    right: 0;
+    width: 7rem;
+    height: inherit;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.icon{
+    font-size: 1.5rem;
+    color: var(--main-color);
+}
+.item-list{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 1rem 5rem;
+}
+.list{
+    box-sizing : border-box; /* 테두리와 안쪽 여백의 크기도 요소의 크기로 고려한다. 너비를 100픽셀로 설정하고 테두리와 안쪽 여백을 추가하면, 콘텐츠 영역이 줄어들어 총 너비 100픽셀으 유지한다. 대부분의 경우 이 편이 크기를 조절할 때 쉽다.*/
+                             /*content-box로 지정하면 기본 css 박스 크기 결정법을 사용한다. 요소의 너비를 100 픽셀로 설정하면 콘텐츠 영역 100픽셀 너비를 가지고, 테두리와 안쪽 여백은 이에 더해진다.*/
+    width:24%;
+    margin-right: calc(4%/3);
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+.list:nth-child(4n){
+    margin-right: 0;
+}
+.list-link{
+    display: flex;
+    justify-content: center;
+    padding:0.7rem;
+    border-radius: 1rem;
+    background-color: #f1f2f3;
+    margin-bottom: 0;
+}
+.list-img{}
+.list-content{
+    font-siez : 0.8rem
+}
