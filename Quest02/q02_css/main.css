@@ -1,3 +1,7 @@
+body{
+    background-color: #e5e5e5;
+}
+
 .body-wrap{
     margin: 0 auto;
     width: 600px;
@@ -70,4 +74,105 @@ header #titleLogo{
 .list-img{}
 .list-content{
     font-siez : 0.8rem
+}
+.A_GradeContainer{
+    width: inherit;
+    background-color: white;
+    margin: 10px;
+    padding:10px ;
+    border-radius: 10px;
+}
+.todayWeatherAndOnAir{
+    display: flex;
+    box-sizing: border-box;
+    justify-content: normal;
+}
+.wheatherPicture{
+    position: relative;
+    width: 70px;
+    height: 70px;
+    margin: auto;
+}
+.wheatherPicture img{
+    position: absolute;
+    width: 465px;
+    height: 400px;
+    clip: rect(0px,66px,66px,0px);
+}
+.todayWeather{
+    position: relative;
+    left: -10px;
+    font-family: AcadEref;
+    font-weight: lighter;
+    align-items: center;
+}
+.todayWeather a{
+    font-weight: bold;
+}
+.onAir{
+    /*background-color: #03c75a;*/
+    padding-left: 20px;
+    width: 300px;
+    height: 70px;
+    border-left: solid 1px #828282;
+    display: flex;
+}
+.onAirTitle h4{
+    font-size: 20px;
+    font-weight: bolder;
+    color: red;
+}
+.onAirTitle a{
+    padding: 0px;
+    margin-top: -5px;
+    display: block;
+    font-size: 13px;
+    font-weight: bold;
+}
+.onAir-img-wrap{
+    display: flex;
+}
+.onAir img{
+    margin-left: 2%;
+    position: relative;
+    width: 30%;
+    border-radius: 20px;
+}
+
+.weatherSmokeInfo div.weatherSmokeInfoTitle{
+    display: flex;
+    align-items: center;
+
+}
+.weatherSmokeInfo div.weatherSmokeInfoTitle span{
+    display: block;
+    font-weight: bolder;
+    font-size: 20px;
+    margin-right: 10px;
+}
+.userAtPlace-img{
+    position: relative;
+    margin-top: -130%;
+    margin-left: -4%;
+}
+.userAtPlace-img img{
+    position: absolute;
+    width: 465px;
+    height: 400px;
+    /*clip: inset-rect(355px,55px,380px,25px);*/
+    clip: rect(355px,55px,380px,25px);
+}
+
+.weatherSmokeInfoButtons{
+margin-top: 10px;
+
+}
+.weatherSmokeInfoButtonSquare{
+    width: 130px;
+    height: 30px;
+    background-color: #c7d5e5;
+    border-width: 0;
+    color: #66707d;
+    font-weight: bold;
+
 }

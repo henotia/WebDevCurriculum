@@ -13,9 +13,9 @@
         <div id="titleLogo">NAVER</div>
         <div class="searchBar">
             <input
-                   type="text"
-                   class="SearchBar_Input"
-                   placeholder="검색어를 입력하십쇼."/>
+                    type="text"
+                    class="SearchBar_Input"
+                    placeholder="검색어를 입력하십쇼."/>
             <div class="SearchBar_Input_icon-wrap">
                 <i class="fas fa-microphone icon"></i>
                 <i class="fas fa-camera-retro icon"></i>
@@ -48,9 +48,9 @@
                         <img
                                 class="list-img"
                                 src="./img/icons/icon_e.png"
-                                alt="경제지표판"/>
+                                alt="경제판"/>
                     </a>
-                    <p class="list-content">경제지표판</p>
+                    <p class="list-content">경제판</p>
                 </li>
                 <li class="list">
                     <a class="list-link" href="#">
@@ -59,7 +59,7 @@
                                 src="./img/icons/icon_sports.png"
                                 alt="스포츠판"/>
                     </a>
-                        <p class="list-content">스포츠판</p>
+                    <p class="list-content">스포츠판</p>
                 </li>
                 <li class="list">
                     <a class="list-link" href="#">
@@ -156,41 +156,57 @@
         </nav>
 
 
-        <div id="todayWeatherAndOnAir" class="A_GradeContainer">
-
-            <div id="todayWeather">
-                <img style="display: inline-block" src="branchOffice.png"/>
-                <span id="todayWeatherComment"></span>
+        <div class="todayWeatherAndOnAir A_GradeContainer">
+            <div class="wheatherPicture">
+                <img src="./img/weather/sp_icon_weather_35d9613d.png"/>
             </div>
 
-            <div id="onAir">
-                <img/>
-                <img class="onAirCircle" style="display: inline"/>
-                <img class="onAirCircle" style="display: inline"/>
-                <img class="onAirCircle" style="display: inline"/>
+            <div class="todayWeather">
+                <span id="todayWeatherComment"><a>10º맑음</a>
+                                        <br/>어제보다 2º 높아요</span>
+            </div>
+            <div class="onAir">
+                <div class="onAirTitle"><h4>NOW.</h4><a>지금 방송중</a></div>
+                <!--                <img/>-->
+                <div class="onAir-img-wrap">
+                    <img class="onAirCircle" src="branchOffice.png"/>
+                    <img class="onAirCircle" src="check.png"/>
+                    <img class="onAirCircle" src="qna.png"/>
+                </div>
             </div>
 
         </div>
 
 
-        <div id="weatherSmokeInfo" class="A_GradeContainer">
-            <span id="weatherSmokeInfoTitle">날씨</span>
-            <div id="userAtPlace">위치</div>
-            <div id="weatherSmokeInfoButtons">
+        <div class="weatherSmokeInfo A_GradeContainer">
+            <div class="weatherSmokeInfoTitle">
+                <span>날씨</span>
+                <div class="userAtPlace">서울시 잠실동</div>
+                <div class="userAtPlace-img">
+                    <img src="./img/icons/sp_search_9655b415.png"/>
+                </div>
+            </div>
+            <div class="weatherSmokeInfoButtons">
                 <button id="timeWeatherInfo" class="weatherSmokeInfoButtonSquare">시간대별날씨</button>
                 <button id="timeSmokeInfo" class="weatherSmokeInfoButtonSquare">시간대별 미세먼지</button>
                 <button id="weekWeatherInfo" class="weatherSmokeInfoButtonSquare">주간 날씨</button>
                 <button id="weekSomkeInfo" class="weatherSmokeInfoButtonSquare">주간 미세먼지</button>
             </div>
             <div id="weatherSmokeInfo_displayPanel">
-                <img/>날씨 도표
+                <img src="./img/weather/weeklyweather.png"/>
             </div>
         </div>
 
 
         <div id="aboutCovid19" class="A_GradeContainer">
-            <div id="covid19CofirmedStatus" class="aboutCovid19"><img src="branchOffice.png"/>국내외 확진현황</div>
-            <div id="covid19FactCheckHere" class="aboutCovid19"><img src="branchOffice.png"/>백신 정보 팩트는?</div>
+            <div id="covid19CofirmedStatus" class="aboutCovid19">
+                <!--                <img src="branchOffice.png"/>-->
+                국내외 확진현황
+            </div>
+            <div id="covid19FactCheckHere" class="aboutCovid19">
+                <!--                <img src="branchOffice.png"/>-->
+                백신 정보 팩트는?
+            </div>
         </div>
 
 
@@ -198,7 +214,7 @@
             제 102주년 대한민국 임시정부 수립일
         </div>
         <div id="recommendOurServiceApp" class="A_GradeContainer">
-            <img style="display: inline" src="branchOffice.png"/>
+            <!--            <img style="display: inline" src="branchOffice.png"/>-->
             <span id="recommendOurServiceAppComment">앱으로 새로운 네이버를 더 쾌적하게 사용해 보세요.</span>
             <button id="goUseOurApp">앱 사용하기</button>
         </div>
