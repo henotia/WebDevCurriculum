@@ -1,0 +1,224 @@
+header{
+}
+
+body{
+    background-color: #ececec;
+    /*display: block;*/
+
+}
+header #titleLogo{
+    width: 100vw;
+    height: max-content;
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bolder;
+    font-family: Impact;
+    color: green;
+}
+header{
+display: flex;
+flex-direction: column;
+    align-items: center;
+}
+
+#searchBar{
+    flex: content-box;
+    display: flex;
+    width: 30vw;
+    height: max-content;
+    border: 0.2em solid green;
+    border-radius: 10px;
+    justify-content: space-between;
+    margin-top: 1em;
+    margin-bottom: 2em;
+    box-shadow: 5px 5px 5px 5px grey;
+
+}
+
+#SearchBar_Input{
+    border-width: 0;
+    width: 70vw;
+    height: 2vw;
+}
+
+.searchBar_img{
+    width: 1.3em;
+}
+
+.A_GradeContainer{
+    margin-left: 25%;
+    margin-bottom: 3vw;
+    height: fit-content;
+    width: 50vw;
+    background-color: white;
+    border-radius: 5px;
+}
+
+nav {
+    margin-left: 25%;
+    display: flex;
+    width: 50vw;
+    flex-flow: row wrap;
+}
+
+div.navMenuSquare {
+    flex: 2 2 5em;
+    width: 20vw;
+    height: 10vw;
+    /*background-color: grey;*/
+    border-radius: 10px;
+    text-align: center;
+    box-sizing: border-box;
+    flex-flow: nowrap;
+}
+
+div.navMenuSquare a{
+    font-size: 0.5em;
+    margin: auto;
+}
+
+div.navMenuSquare img{
+    width: 2em;
+    margin: auto;
+}
+
+.SquareButton{
+    flex: 1 1 auto;
+    display: block;
+    background-color: unset;
+    border: 0;
+    margin: auto;
+}
+
+#todayWeather img{
+    width: 2.5em;
+}
+
+div#todayWeatherAndOnAir{
+    display: flex;
+    flex-flow: wrap;
+}
+
+/*
+div#todayWeatherAndOnAir div{
+    flex: 1 1 auto;
+}
+*/
+
+div#todayWeatherAndOnAir div#onAir {
+    flex: 0 0 15vw;
+}
+
+div#todayWeatherAndOnAir div#todayWeather{
+    flex: 0 0 30vw;
+    border-right: grey;
+    border-right-style: solid;
+    border-right-width: 2px;
+}
+div#weatherSmokeInfo{
+    display: flex;
+    flex-flow: row wrap;
+    height: 15vw;
+}
+
+div#weatherSmokeInfo span#weatherSmokeInfoTitle{
+font-weight: bolder;
+font-family: Impact;
+flex : 0 0 5vw;
+font-size: 1em;
+}
+
+div#weatherSmokeInfo div#userAtPlace{
+    font-size: 0.2em;
+flex : 0 0 5vw;
+}
+div#weatherSmokeInfo div#weatherSmokeInfoButtons{
+    margin-left: 10px;
+    justify-content: space-evenly;
+}
+
+div#weatherSmokeInfo div#weatherSmokeInfoButtons button{
+width: max-content;
+height: 13em;
+font-size: 0.1em;
+background-color: #ececec;
+border-width: 0;
+}
+
+div#aboutCovid19{
+    padding-top: 1vw;
+    display: flex;
+    flex-flow: row nowrap;
+    font-size: 0.2em;
+    height: 6vw;
+}
+div#aboutCovid19 div#covid19CofirmedStatus{
+    flex : 0 0 20vw;
+}
+div#aboutCovid19 div#covid19FactCheckHere{
+    flex : 0 0 20vw;
+}
+div.aboutCovid19 img{
+    width: 10em;
+}
+
+div#nearAnniversary{
+    text-align: center;
+    font-size: 0.8em;
+    font-weight: bold;
+    color: grey;
+}
+div#recommendOurServiceApp{
+    display: flex;
+    align-items: center;
+}
+div#recommendOurServiceApp span{
+    font-size: 0.1em;
+}
+div#recommendOurServiceApp img{
+    width: 2em;
+}
+div#recommendOurServiceApp button{
+    font-size: 0.4em;
+    flex: content-box;
+    border-color: cornflowerblue;
+    background-color: unset;
+    color: cornflowerblue;
+    border-radius: 4px;
+}
+div#webToonShortCutMenu a{
+    font-weight: bolder;
+    font-size: 0.8em;
+}
+div#issueTopicPanTitleText{
+    display: inline-flex;
+flex-direction: row;
+justify-content: space-evenly;
+}
+
+div#issueTopicPanTitleText span{
+    padding-left: 5%;
+    width: 30vw;
+    font-size: 0.2em;
+    font-weight: bolder;
+}
+
+div#issueTopicPanTitleText a{
+    flex: 0 0 auto;
+    font-size: 2px;
+    font-weight: bolder;
+}
+div#issueTopicMenu{
+    display: flex;
+    flex-flow: row wrap;
+    width: 40vw;
+    text-align: center;
+}
+
+div#issueTopicMenu div{
+    flex : 1 1 20vw;
+    font-size: 0.3em;
+    color: #828282;
+    background-color: #c6c6c6;
+    border-radius: 1vw;
+}
