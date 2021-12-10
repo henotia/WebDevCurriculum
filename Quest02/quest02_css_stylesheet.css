@@ -222,3 +222,8 @@ div#issueTopicMenu div{
     background-color: #c6c6c6;
     border-radius: 1vw;
 }
+
+.aboutCovid19-wrap{
+display: flex;
+
+}

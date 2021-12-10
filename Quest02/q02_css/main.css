@@ -176,3 +176,274 @@ margin-top: 10px;
     font-weight: bold;
 
 }
+.aboutCovid19-wrap{
+    display: flex;
+    width: inherit;
+    height: inherit;
+    /*justify-content: space-evenly;*/
+}
+.aboutCovid19-status-wrap{
+    position: relative;
+    display: flex;
+    width: 280px;
+    border-right: groove 1px;
+}
+
+.covid19CofirmedStatus-img-wrap{
+    position: relative;
+    width: 30px;
+    height: 30px;
+}
+
+.covid19CofirmedStatus-img-wrap img{
+    position: absolute;
+    width: 365px;
+    height: 365px;
+    clip: rect(160px,250px,200px,200px);
+    margin-top: -170px;
+    margin-left: -210px;
+}
+
+.covid19CofirmedStatus span:nth-child(1){
+    font-weight: bolder;
+}
+
+.covid19CofirmedStatus span:nth-child(2){
+    display: block;
+    margin-top: 5px;
+    margin-left: -30px;
+    font-size: 13px;
+    color: #989898;
+    font-weight: bold;
+}
+
+.covid19FactCheckHere-wrap{
+    position: relative;
+    display: flex;
+}
+
+.covid19FactCheckHere-img-wrap{
+    padding-left: 10px;
+    position: relative;
+    width: 30px;
+    height: 30px;
+}
+
+.covid19FactCheckHere-img-wrap img{
+    position: absolute;
+    width: 365px;
+    height: 365px;
+    clip: rect(250px,280px,290px,250px);
+    margin-top: -260px;
+    margin-left: -250px;
+}
+.covid19FactCheckHere-title span:nth-child(1){
+    font-weight: bolder;
+}
+
+.covid19FactCheckHere-title span:nth-child(2){
+    display: block;
+    margin-top: 5px;
+    margin-left: -30px;
+    font-size: 13px;
+    color: #989898;
+    font-weight: bold;
+}
+
+
+.nearAnniversary{
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 100px;
+}
+
+.nearAnniversary-img img{
+    margin-left: -30px;
+    margin-top:-5px;
+    position: absolute;
+    width: 270px;
+    height: 270px;
+    clip: rect(0px,120px,35px,83px);
+    opacity: 70%;
+}
+
+.recommendOurServiceApp{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.recommendOurServiceApp-img{
+    position: relative;
+    /*top: 0;*/
+    /*right: 0;*/
+}
+.recommendOurServiceApp-img img{
+    position: absolute;
+    width: 270px;
+    height: 270px;
+    clip: rect(117px,100px,150px,65px);
+    margin-left: -60px;
+    margin-top: -134px;
+
+}
+.recommendOurServiceApp span{
+    position: relative;
+    margin-left: -90px;
+    font-weight: lighter;
+    font-size: small;
+    color: #828282;
+}
+.recommendOurServiceApp span#recommendOurServiceAppComment a{
+    font-weight: bold;
+    color: #000000;
+}
+.goUseOurApp{
+    background-color: white;
+    color: #74d0bf;
+    border-color: #74d0bf;
+    border-radius: 6px;
+    box-shadow: 0px 0px 0px 0px;
+    border-style: groove;
+}
+.webToonShortCutMenu{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-items: center;
+    justify-content: space-between;
+}
+
+.webToonShortCutMenu span{
+    position: relative;
+    font-weight: bold;
+}
+.webToonShortCutMenu-img--wrap{
+    position: relative;
+}
+.webToonShortCutMenu img{
+    position: absolute;
+    width: 270px;
+    height: 270px;
+    clip: rect(117px,60px,150px,40px);
+    margin-top: -135px;
+    margin-left: -60px;
+}
+.recommendissueTopicPan{
+    display: block;
+}
+.issueTopicPanTitleText {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.issueTopicPanTitleText span{
+    font-weight: bold;
+    font-size: 15px;
+    font-family: "Agency FB";
+}
+.issueTopicPanTitleText a{
+    font-weight: lighter;
+    color: #828282;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+
+.pan-item-list{
+    display: flex;
+    flex-wrap: wrap;
+    /*margin: 1rem 5rem;*/
+}
+.pan-list{
+    box-sizing : border-box;
+    width:50%;
+    padding: 0.2rem;
+}
+.pan-list:nth-child(4n){
+    margin-right: 0;
+}
+.pan-list-link{
+    display: flex;
+    align-items: center;
+    padding:0.3rem;
+    border-radius: 1rem;
+    background-color: #f1f2f3;
+    text-decoration: none;
+    color: #828282;
+}
+.pan-list-img{
+    background-color: inherit;
+    width: 17%;
+    margin-right: 10px;
+    padding: 3px;
+}
+
+.pan-list-content{
+    font-siez : 0.8rem;
+    text-decoration: none;
+}
+.noticeUpdateApp{
+    padding:15px;
+    align-items: center;
+}
+.noticeUpdateApp label{
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 10px;
+    border-color: var(--main-color);
+    padding:5px 10px 5px 10px;
+    font-size: 13px;
+    color: var(--main-color);
+    display: inline-block;
+}
+.noticeUpdateApp span{
+    display: inline-block;
+    font-size: 14px;
+    font-family: "Arial Narrow";
+    font-weight: bold;
+    margin-left: 10px;
+    color: #6e6e6e;
+}
+.footerMenuLinked{
+    margin: 70px auto 50px;
+    display: flex;
+    justify-content: center;
+    color: #828282;
+    flex-wrap: wrap;
+    width: 320px;
+}
+.footerMenuLinked a{
+    position: relative;
+    display: inline-block;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.goShownWholeService ,.goShownPersonalInfoPolicy{
+    position: relative;
+    width: max-content;
+    height: max-content;
+    border-left-width: 1px;
+    border-left-style: solid;
+    border-right-width: 1px;
+    border-right-style: solid;
+
+}
+.goShownPersonalInfoPolicy {
+    font-weight: bolder;
+}
+.footerComponyLogo{
+    margin: 0px auto 130px;
+    display: flex;
+    justify-content: center;
+    color: #828282;
+    flex-wrap: wrap;
+    width: 320px;
+
+    text-align: center;
+    font-size: 1.3em;
+    font-weight: bolder;
+    font-family: Impact;
+}
