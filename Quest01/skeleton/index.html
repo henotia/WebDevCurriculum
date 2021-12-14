@@ -1,308 +1,346 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/html">
+<html>
 <head>
     <meta charset="UTF-8">
     <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
-    <link rel="stylesheet" href="../../Quest02/q02_css/main.css">
     <link rel="stylesheet" href="../../Quest02/q02_css/reset.css">
+    <link rel="stylesheet" href="../../Quest02/q02_css/main.css">
     <title>NAVER</title>
 </head>
+
 <body>
-<div class="body-wrap">
-    <header>
-        <div id="titleLogo">NAVER</div>
-        <div class="searchBar">
+
+
+<header>
+    <div id="titleLogo">NAVER</div>
+
+    <div class="searchBar">
+
+        <label>
+
             <input
                     type="text"
-                    class="SearchBar_Input"
+                    class="searchBar_input"
                     placeholder="검색어를 입력하십쇼."/>
-            <div class="SearchBar_Input_icon-wrap">
-                <i class="fas fa-microphone icon"></i>
-                <i class="fas fa-camera-retro icon"></i>
-                <i class="fas fa-map-marker-alt icon"></i>
-            </div>
+        </label>
+
+        <div class="searchBar_input_icon_wrap">
+            <i class="fas fa-microphone icon"></i>
+            <i class="fas fa-camera-retro icon"></i>
+            <i class="fas fa-map-marker-alt icon"></i>
         </div>
-    </header>
-    <section class="main">
-        <nav>
-            <ul class="item-list">
-                <li class="list">
-                    <a class="list-link" href="#">
-                        <img class="list-img"
-                             src="./img/icons/icon_news.png"
-                             alt="뉴스판">
-                    </a>
-                    <p class="list-content">뉴스판</p>
-                </li>
-                <li class="list">
-                    <a class="list-link" href="#">
-                        <img
-                                class="list-img"
-                                src="./img/icons/icon_shop.png"
-                        />
-                    </a>
-                    <p class="list-content">쇼핑판</p>
-                </li>
-                <li class="list">
-                    <a class="list-link" href="#">
-                        <img
-                                class="list-img"
-                                src="./img/icons/icon_e.png"
-                                alt="경제판"/>
-                    </a>
-                    <p class="list-content">경제판</p>
-                </li>
-                <li class="list">
-                    <a class="list-link" href="#">
-                        <img
-                                class="list-img"
-                                src="./img/icons/icon_sports.png"
-                                alt="스포츠판"/>
-                    </a>
-                    <p class="list-content">스포츠판</p>
-                </li>
-                <li class="list">
-                    <a class="list-link" href="#">
-                        <img class="list-img"
-                             src="./img/icons/icon_mail.png"
-                             alt="메일"/>
-                    </a>
-                    <p class="list-content">메일</p>
-                </li>
-                <li class="list">
-                    <a class="list-link" href="#">
-                        <img class="list-img"
-                             src="./img/icons/icon_cafe.png"
-                             alt="카페"/>
-                    </a>
-                    <p class="list-content">카페</p>
-                </li>
-                <li class="list">
-                    <a class="list-link" href="#">
-                        <img class="list-img"
-                             src="./img/icons/icon_blog.png"
-                             alt="블로그"/>
-                    </a>
-                    <p class="list-content">블로그</p>
-                </li>
-                <li class="list">
-                    <a class="list-link" href="#">
-                        <img class="list-img"
-                             src="./img/icons/icon_cafe.png"
-                             alt="카페"/>
-                    </a>
-                    <p class="list-content">카페</p>
-                </li>
-                </li>
-                <li class="list">
-                    <a class="list-link" href="#">
-                        <img class="list-img"
-                             src="./img/icons/icon_etc.png"
-                             alt="더보기"/>
-                    </a>
-                    <p class="list-content">...</p>
-                </li>
-            </ul>
-            <!--
-            <div class="navMenuSquare">
-                <button id="newPanSquareMenu" class="SquareButton">
-                    <img src="branchOffice.png"/>
-                </button>
-                <a>뉴스판</a>
-            </div>
-            <div class="navMenuSquare">
-                <button id="economicChartMenu" class="SquareButton">
-                    <img src="branchOffice.png"/>
-                </button>
-                <a>경제 지표판</a>
-            </div>
-            <div class="navMenuSquare">
-                <button id="entertainmentMenu" class="SquareButton">
-                    <img src="branchOffice.png"/>
-                </button>
-                <a>연예판</a>
-            </div>
-            <div class="navMenuSquare">
-                <button id="trendPanMenu" class="SquareButton">
-                    <img src="branchOffice.png"/>
-                </button>
-                <a>트렌드판</a>
-            </div>
-            <div class="navMenuSquare">
-                <button id="mailMenu" class="SquareButton">
-                    <img src="branchOffice.png"/>
-                </button>
-                <a>메일</a>
-            </div>
-            <div class="navMenuSquare">
-                <button id="cafeMenu" class="SquareButton">
-                    <img src="branchOffice.png"/>
-                </button>
-                <a>카페</a>
-            </div>
-            <div class="navMenuSquare">
-                <button id="blogMenu" class="SquareButton">
-                    <img src="branchOffice.png"/>
-                </button>
-                <a>블로그</a>
-            </div>
-            <div class="navMenuSquare">
-                <button id="andMoreMenu" class="SquareButton">
-                    <img src="branchOffice.png"/>
-                </button>
-                <a>..</a>
-            </div>
-            -->
-        </nav>
+    </div>
+</header>
+
+<section class="main">
+    <nav>
+        <ul class="item-list">
+            <li class="list">
+                <a class="list-link" href="#">
+                    <img class="list-img"
+                         src="./img/icons/icon_news.png"
+                         alt="뉴스판">
+                </a>
+                <p class="list-content">뉴스판</p>
+            </li>
+            <li class="list">
+                <a class="list-link" href="#">
+                    <img
+                            class="list-img"
+                            src="./img/icons/icon_shop.png"
+                            alt="쇼핑판"
+                    />
+                </a>
+                <p class="list-content">쇼핑판</p>
+            </li>
+            <li class="list">
+                <a class="list-link" href="#">
+                    <img
+                            class="list-img"
+                            src="./img/icons/icon_e.png"
+                            alt="경제판"/>
+                </a>
+                <p class="list-content">경제판</p>
+            </li>
+            <li class="list">
+                <a class="list-link" href="#">
+                    <img
+                            class="list-img"
+                            src="./img/icons/icon_sports.png"
+                            alt="스포츠판"/>
+                </a>
+                <p class="list-content">스포츠판</p>
+            </li>
+            <li class="list">
+                <a class="list-link" href="#">
+                    <img class="list-img"
+                         src="./img/icons/icon_mail.png"
+                         alt="메일"/>
+                </a>
+                <p class="list-content">메일</p>
+            </li>
+            <li class="list">
+                <a class="list-link" href="#">
+                    <img class="list-img"
+                         src="./img/icons/icon_cafe.png"
+                         alt="카페"/>
+                </a>
+                <p class="list-content">카페</p>
+            </li>
+            <li class="list">
+                <a class="list-link" href="#">
+                    <img class="list-img"
+                         src="./img/icons/icon_blog.png"
+                         alt="블로그"/>
+                </a>
+                <p class="list-content">블로그</p>
+            </li>
+            <li class="list">
+                <a class="list-link" href="#">
+                    <img class="list-img"
+                         src="./img/icons/icon_etc.png"
+                         alt="더보기"/>
+                </a>
+                <p class="list-content">...</p>
+            </li>
+        </ul>
+    </nav>
 
 
-        <div class="todayWeatherAndOnAir A_GradeContainer">
-            <div class="wheatherPicture">
-                <img src="./img/weather/sp_icon_weather_35d9613d.png"/>
-            </div>
+    <div class="todayWeatherAndOnAir a_gradeContainer">
+        <div class="wheatherPicture">
+            <!--                <img src="./img/weather/sp_icon_weather_35d9613d.png" alt="날씨사진"/>-->
+        </div>
 
-            <div class="todayWeather">
+
+        <div class="todayWeather">
                 <span id="todayWeatherComment"><a>10º맑음</a>
                                         <br/>어제보다 2º 높아요</span>
+        </div>
+
+
+        <div class="onAir">
+            <div class="onAirTitle"><h4>NOW.</h4><a>지금 방송중</a></div>
+            <div class="onAir_img_wrap">
+                <img class="onAirCircle" src="branchOffice.png" alt="온에어1"/>
+                <img class="onAirCircle" src="check.png" alt="온에어2"/>
+                <img class="onAirCircle" src="qna.png" alt="온에어3"/>
             </div>
-            <div class="onAir">
-                <div class="onAirTitle"><h4>NOW.</h4><a>지금 방송중</a></div>
-                <!--                <img/>-->
-                <div class="onAir-img-wrap">
-                    <img class="onAirCircle" src="branchOffice.png"/>
-                    <img class="onAirCircle" src="check.png"/>
-                    <img class="onAirCircle" src="qna.png"/>
+        </div>
+    </div>
+
+
+    <div class="weatherSmokeInfo a_gradeContainer">
+        <div class="weatherSmokeInfoTitle">
+            <span>날씨</span>
+            <div class="userAtPlace">서울시 잠실동</div>
+            <div class="userAtPlace_img">
+                <!--                    <img src="./img/icons/sp_search_9655b415.png" alt="현재위치"/>-->
+            </div>
+        </div>
+
+
+        <div class="weatherSmokeInfoButtons">
+            <button class="weatherSmokeInfoButtonSquare">시간대별날씨</button>
+            <button class="weatherSmokeInfoButtonSquare">시간대별 미세먼지</button>
+            <button class="weatherSmokeInfoButtonSquare">주간 날씨</button>
+            <button class="weatherSmokeInfoButtonSquare">주간 미세먼지</button>
+        </div>
+
+
+        <div id="weatherSmokeInfo_displayPanel">
+            <div class="weelyWeatherInfo">
+                <div class="weelyWeatherInfo_box">
+                    <div class="weeklyWeather_upper">19º</div>
+                    <div class="weeklyWeather_border"></div>
+                    <div class="weeklyWeather_lower">8º</div>
+                    <div class="weeklyWeather_img"></div>
+                    <div class="weeklyWeather_date">어제</div>
                 </div>
-            </div>
 
-        </div>
-
-
-        <div class="weatherSmokeInfo A_GradeContainer">
-            <div class="weatherSmokeInfoTitle">
-                <span>날씨</span>
-                <div class="userAtPlace">서울시 잠실동</div>
-                <div class="userAtPlace-img">
-                    <img src="./img/icons/sp_search_9655b415.png"/>
+                <div class="weelyWeatherInfo_box">
+                    <div class="weeklyWeather_upper">20º</div>
+                    <div class="weeklyWeather_border"></div>
+                    <div class="weeklyWeather_lower">7º</div>
+                    <div class="weeklyWeather_img"></div>
+                    <div class="weeklyWeather_date today">오늘</div>
                 </div>
-            </div>
-            <div class="weatherSmokeInfoButtons">
-                <button id="timeWeatherInfo" class="weatherSmokeInfoButtonSquare">시간대별날씨</button>
-                <button id="timeSmokeInfo" class="weatherSmokeInfoButtonSquare">시간대별 미세먼지</button>
-                <button id="weekWeatherInfo" class="weatherSmokeInfoButtonSquare">주간 날씨</button>
-                <button id="weekSomkeInfo" class="weatherSmokeInfoButtonSquare">주간 미세먼지</button>
-            </div>
-            <div id="weatherSmokeInfo_displayPanel">
-                <img src="./img/weather/weeklyweather.png"/>
-            </div>
-        </div>
 
-        <div class="aboutCovid19-wrap A_GradeContainer">
-            <div class="aboutCovid19-status-wrap">
-                <div class="covid19CofirmedStatus-img-wrap">
-                    <img src="./img/icons/sp_search_9655b415.png">
+                <div class="weelyWeatherInfo_box">
+                    <div class="weeklyWeather_upper">26º</div>
+                    <div class="weeklyWeather_border"></div>
+                    <div class="weeklyWeather_lower">8º</div>
+                    <div class="weeklyWeather_img"></div>
+                    <div class="weeklyWeather_date">월</div>
                 </div>
-                <div class="covid19CofirmedStatus aboutCovid19">
-                    <span>코로나19</span>
-                    <span>국내외 확진현황</span>
+
+                <div class="weelyWeatherInfo_box">
+                    <div class="weeklyWeather_upper">29º</div>
+                    <div class="weeklyWeather_border"></div>
+                    <div class="weeklyWeather_lower">10º</div>
+                    <div class="weeklyWeather_img"></div>
+                    <div class="weeklyWeather_date">화</div>
                 </div>
-            </div>
-            <div class="covid19FactCheckHere-wrap">
-                <div class="covid19FactCheckHere-img-wrap aboutCovid19">
-                    <img src="./img/icons/sp_search_9655b415.png"/>
+
+                <div class="weelyWeatherInfo_box">
+                    <div class="weeklyWeather_upper">31º</div>
+                    <div class="weeklyWeather_border"></div>
+                    <div class="weeklyWeather_lower">14º</div>
+                    <div class="weeklyWeather_img"></div>
+                    <div class="weeklyWeather_date">수</div>
                 </div>
-                <div class="covid19FactCheckHere-title">
-                    <span>코로나 팩트 체크</span>
-                    <span>백신 정보 팩트는?</span>
+
+                <div class="weelyWeatherInfo_box">
+                    <div class="weeklyWeather_upper">39º</div>
+                    <div class="weeklyWeather_border"></div>
+                    <div class="weeklyWeather_lower">38º</div>
+                    <div class="weeklyWeather_img"></div>
+                    <div class="weeklyWeather_date">목</div>
                 </div>
+
+                <div class="weelyWeatherInfo_box">
+                    <div class="weeklyWeather_upper">29º</div>
+                    <div class="weeklyWeather_border"></div>
+                    <div class="weeklyWeather_lower">18º</div>
+                    <div class="weeklyWeather_img"></div>
+                    <div class="weeklyWeather_date">금</div>
+                </div>
+
+                <div class="weelyWeatherInfo_box">
+                    <div class="weeklyWeather_upper">49º</div>
+                    <div class="weeklyWeather_border"></div>
+                    <div class="weeklyWeather_lower">38º</div>
+                    <div class="weeklyWeather_img"></div>
+                    <div class="weeklyWeather_date">토</div>
+                </div>
+
+                <div class="weelyWeatherInfo_box">
+                    <div class="weeklyWeather_upper">59º</div>
+                    <div class="weeklyWeather_border"></div>
+                    <div class="weeklyWeather_lower">48º</div>
+                    <div class="weeklyWeather_img"></div>
+                    <div class="weeklyWeather_date">일</div>
+                </div>
+
+            </div>
+            <!--                <img src="./img/weather/weeklyweather.png"/>-->
+        </div>
+    </div>
+
+
+    <div class="aboutCovid19_wrap a_gradeContainer">
+        <div class="aboutCovid19_status_wrap">
+            <div class="covid19ConfirmedStatus_img_wrap">
+                <img src="./img/icons/sp_search_9655b415.png" alt="코로나19">
+            </div>
+            <div class="covid19ConfirmedStatus aboutCovid19">
+                <span>코로나19</span>
+                <span>국내외 확진현황</span>
             </div>
         </div>
 
 
-        <div class="nearAnniversary A_GradeContainer">
-            <div class="nearAnniversary-img">
-                <img src="./img/icons/sp_search_9655b415.png">
+        <div class="covid19FactCheckHere_wrap">
+
+            <div class="covid19FactCheckHere_img_wrap aboutCovid19">
+                <img src="./img/icons/sp_search_9655b415.png" alt="covid19"/>
             </div>
-            <span>제 102주년 대한민국 임시정부 수립일</span>
-        </div>
 
-
-        <div class="recommendOurServiceApp A_GradeContainer">
-            <div class="recommendOurServiceApp-img">
-                <img src="./img/icons/sp_search_9655b415.png"/>
-            </div>
-            <span id="recommendOurServiceAppComment">앱으로 <a>새로운 네이버를</a> 더 쾌적하게 사용해 보세요.</span>
-            <button class="goUseOurApp">앱 사용하기</button>
-        </div>
-
-
-        <div class="webToonShortCutMenu A_GradeContainer">
-            <span>웹툰</span>
-            <div class="webToonShortCutMenu-img--wrap">
-                <img src="./img/icons/sp_search_9655b415.png"/>
+            <div class="covid19FactCheckHere_title">
+                <span>코로나 팩트 체크</span>
+                <span>백신 정보 팩트는?</span>
             </div>
         </div>
+    </div>
 
 
-        <div class="recommendissueTopicPan A_GradeContainer">
-            <div class="issueTopicPanTitleText">
-                <span class="checkIssueTopicComent">인기 주제 판을 확인해보세요!</span>
-                <a href="">판관리</a>
-            </div>
-            <div id="issueTopicMenu">
-                <ul class="pan-item-list">
-                    <li class="pan-list">
-                        <a class="pan-list-link" href="#">
-                            <img class="pan-list-img"
-                                 src="https://s.pstatic.net/static/www/mobile/edit/2021/0512/upload_16207993793424TJiU.png"
-                                 alt="뉴스판">
-                            <p class="pan-list-content">영화판</p>
-                        </a>
-
-                    </li>
-                    <li class="pan-list">
-                        <a class="pan-list-link" href="#">
-                            <img class="pan-list-img"
-                                 src="https://s.pstatic.net/static/www/mobile/edit/2020/0319/mobile_193621924331.png"
-                                 alt="뉴스판">
-                            <p class="pan-list-content">뿜판</p>
-                        </a>
-
-                    </li>
-                    <li class="pan-list">
-                        <a class="pan-list-link" href="#">
-                            <img class="pan-list-img"
-                                 src="https://s.pstatic.net/static/www/mobile/edit/2021/0512/upload_16207989622495n0Cu.png"
-                                 alt="뉴스판">
-                            <p class="pan-list-content">웹툰판</p>
-                        </a>
-
-                    </li>
-                    <li class="pan-list">
-                        <a class="pan-list-link" href="#">
-                            <img class="pan-list-img"
-                                 src="https://s.pstatic.net/static/www/mobile/edit/2021/0512/upload_1620799126806BH6xR.png"
-                                 alt="뉴스판">
-                            <p class="pan-list-content">경제M판</p>
-                        </a>
-
-                    </li>
-                </ul>
-            </div>
+    <div class="nearAnniversary a_gradeContainer">
+        <div class="nearAnniversary_img">
+            <img src="./img/icons/sp_search_9655b415.png" alt="Anniversary">
         </div>
-        <div class="noticeUpdateApp A_GradeContainer">
-            <label>알립니다</label>
-            <span>네이버앱 업데이트 사전 안내</span>
+        <span>제 102주년 대한민국 임시정부 수립일</span>
+    </div>
+
+
+    <div class="recommendOurServiceApp a_gradeContainer">
+        <div class="recommendOurServiceApp-img">
+            <img src="./img/icons/sp_search_9655b415.png" alt="recommend"/>
         </div>
-    </section>
-</div>
+        <span id="recommendOurServiceAppComment">앱으로 <a>새로운 네이버를</a> 더 쾌적하게 사용해 보세요.</span>
+        <button class="goUseOurApp">앱 사용하기</button>
+    </div>
+
+
+    <div class="webToonShortCutMenu a_gradeContainer">
+        <span>웹툰</span>
+        <div class="webToonShortCutMenu_img_wrap">
+            <img src="./img/icons/sp_search_9655b415.png" alt="webtoon_shortcut"/>
+        </div>
+    </div>
+
+
+    <div class="recommendIssueTopicPan a_gradeContainer">
+        <div class="issueTopicPanTitleText">
+            <span class="checkIssueTopicComment">인기 주제 판을 확인해보세요!</span>
+            <a href="">판관리</a>
+        </div>
+        <div id="issueTopicMenu">
+            <ul class="pan_item_list">
+                <li class="pan_list">
+                    <a class="pan_list_link" href="#">
+                        <img class="pan_list_img"
+                             src="https://s.pstatic.net/static/www/mobile/edit/2021/0512/upload_16207993793424TJiU.png"
+                             alt="영화판">
+                        <p class="pan_list_content">영화판</p>
+                    </a>
+
+                </li>
+                <li class="pan_list">
+                    <a class="pan_list_link" href="#">
+                        <img class="pan_list_img"
+                             src="https://s.pstatic.net/static/www/mobile/edit/2020/0319/mobile_193621924331.png"
+                             alt="뿜판">
+                        <p class="pan_list_content">뿜판</p>
+                    </a>
+
+                </li>
+                <li class="pan_list">
+                    <a class="pan_list_link" href="#">
+                        <img class="pan_list_img"
+                             src="https://s.pstatic.net/static/www/mobile/edit/2021/0512/upload_16207989622495n0Cu.png"
+                             alt="웹툰판"/>
+                        <p class="pan_list_content">웹툰판</p>
+                    </a>
+
+                </li>
+                <li class="pan_list">
+                    <a class="pan_list_link" href="#">
+                        <img class="pan_list_img"
+                             src="https://s.pstatic.net/static/www/mobile/edit/2021/0512/upload_1620799126806BH6xR.png"
+                             alt="경제M판">
+                        <p class="pan_list_content">경제M판</p>
+                    </a>
+
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="noticeUpdateApp a_gradeContainer">
+        <label>알립니다</label>
+        <span>네이버앱 업데이트 사전 안내</span>
+    </div>
+</section>
+
+
 <footer>
     <!-- TODO: 하단의 여러 가지 링크들은 어떻게 처리하면 좋을까요? -->
     <div class="footerMenuLinked">
         <a class="goLogin footerMenu">로그인</a>
         <a class="goShownWholeService footerMenu">전체서비스</a>
         <a class="goPcversion footerMenu">PC버젼</a>
-        <a class="goShownServicePolicy footerMenu" >이용약관</a>
+        <a class="goShownServicePolicy footerMenu">이용약관</a>
         <a class="goShownPersonalInfoPolicy footerMenu">개인정보처리방침</a>
         <a class="goShownCustomerSatifactionCenter footerMenu">고객센터</a>
     </div>

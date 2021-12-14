@@ -1,36 +1,28 @@
-body{
-    background-color: #e5e5e5;
-}
-
-.body-wrap{
-    margin: 0 auto;
-    width: 600px;
-}
 .searchBar{
     display: block;
     width: 100%;
     height: 3rem;
     position: relative;
 }
-.SearchBar_Input{
+.searchBar_input{
     padding-left: 0.5rem;
-    width: inherit;
-    height: inherit;
+    width: 100%;
+    height: 100%;
     border: 1px solid var(--main-color);
     box-sizing: border-box;
     border-radius: 10px;
 }
-.SearchBar_Input::placeholder{
+.searchBar_input::placeholder{
     color: #ddd;
 }
 header #titleLogo{
     text-align: center;
     font-size: 2.5em;
     font-weight: bolder;
-    font-family: Impact;
+    font-family: Impact, -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Apple SD Gothic Neo", Arial, sans-serif;
     color: var(--main-color);
 }
-.SearchBar_Input_icon-wrap{
+.searchBar_input_icon_wrap{
     position: absolute;
     top:0;
     right: 0;
@@ -71,11 +63,10 @@ header #titleLogo{
     background-color: #f1f2f3;
     margin-bottom: 0;
 }
-.list-img{}
 .list-content{
     font-siez : 0.8rem
 }
-.A_GradeContainer{
+.a_gradeContainer{
     width: inherit;
     background-color: white;
     margin: 10px;
@@ -92,6 +83,9 @@ header #titleLogo{
     width: 70px;
     height: 70px;
     margin: auto;
+    background-image: url("../../Quest01/skeleton/img/weather/sp_icon_weather_35d9613d.png");
+    background-repeat: no-repeat;
+    background-size: 500px;
 }
 .wheatherPicture img{
     position: absolute;
@@ -102,7 +96,7 @@ header #titleLogo{
 .todayWeather{
     position: relative;
     left: -10px;
-    font-family: AcadEref;
+    font-family: AcadEref, -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Apple SD Gothic Neo", Arial, sans-serif;
     font-weight: lighter;
     align-items: center;
 }
@@ -110,7 +104,6 @@ header #titleLogo{
     font-weight: bold;
 }
 .onAir{
-    /*background-color: #03c75a;*/
     padding-left: 20px;
     width: 300px;
     height: 70px;
@@ -129,7 +122,7 @@ header #titleLogo{
     font-size: 13px;
     font-weight: bold;
 }
-.onAir-img-wrap{
+.onAir_img_wrap{
     display: flex;
 }
 .onAir img{
@@ -139,10 +132,9 @@ header #titleLogo{
     border-radius: 20px;
 }
 
-.weatherSmokeInfo div.weatherSmokeInfoTitle{
+.weatherSmokeInfoTitle{
     display: flex;
     align-items: center;
-
 }
 .weatherSmokeInfo div.weatherSmokeInfoTitle span{
     display: block;
@@ -150,22 +142,19 @@ header #titleLogo{
     font-size: 20px;
     margin-right: 10px;
 }
-.userAtPlace-img{
+.userAtPlace_img{
     position: relative;
-    margin-top: -130%;
-    margin-left: -4%;
-}
-.userAtPlace-img img{
-    position: absolute;
-    width: 465px;
-    height: 400px;
-    /*clip: inset-rect(355px,55px,380px,25px);*/
-    clip: rect(355px,55px,380px,25px);
+    width: 20px;
+    height: 20px;
+    background-image: url("../../Quest01/skeleton/img/icons/sp_search_9655b415.png");
+    background-size: 500px,500px;
+    background-repeat: no-repeat;
+    background-position-x: -333px;
+    background-position-y: -396px;
 }
 
 .weatherSmokeInfoButtons{
-margin-top: 10px;
-
+    margin-top: 10px;
 }
 .weatherSmokeInfoButtonSquare{
     width: 130px;
@@ -176,26 +165,25 @@ margin-top: 10px;
     font-weight: bold;
 
 }
-.aboutCovid19-wrap{
+.aboutCovid19_wrap{
     display: flex;
     width: inherit;
     height: inherit;
-    /*justify-content: space-evenly;*/
 }
-.aboutCovid19-status-wrap{
+.aboutCovid19_status_wrap{
     position: relative;
     display: flex;
     width: 280px;
     border-right: groove 1px;
 }
 
-.covid19CofirmedStatus-img-wrap{
+.covid19ConfirmedStatus_img_wrap{
     position: relative;
     width: 30px;
     height: 30px;
 }
 
-.covid19CofirmedStatus-img-wrap img{
+.covid19ConfirmedStatus_img_wrap img{
     position: absolute;
     width: 365px;
     height: 365px;
@@ -204,11 +192,11 @@ margin-top: 10px;
     margin-left: -210px;
 }
 
-.covid19CofirmedStatus span:nth-child(1){
+.covid19ConfirmedStatus span:nth-child(1){
     font-weight: bolder;
 }
 
-.covid19CofirmedStatus span:nth-child(2){
+.covid19ConfirmedStatus span:nth-child(2){
     display: block;
     margin-top: 5px;
     margin-left: -30px;
@@ -217,19 +205,19 @@ margin-top: 10px;
     font-weight: bold;
 }
 
-.covid19FactCheckHere-wrap{
+.covid19FactCheckHere_wrap{
     position: relative;
     display: flex;
 }
 
-.covid19FactCheckHere-img-wrap{
+.covid19FactCheckHere_img_wrap{
     padding-left: 10px;
     position: relative;
     width: 30px;
     height: 30px;
 }
 
-.covid19FactCheckHere-img-wrap img{
+.covid19FactCheckHere_img_wrap img{
     position: absolute;
     width: 365px;
     height: 365px;
@@ -237,11 +225,11 @@ margin-top: 10px;
     margin-top: -260px;
     margin-left: -250px;
 }
-.covid19FactCheckHere-title span:nth-child(1){
+.covid19FactCheckHere_title span:nth-child(1){
     font-weight: bolder;
 }
 
-.covid19FactCheckHere-title span:nth-child(2){
+.covid19FactCheckHere_title span:nth-child(2){
     display: block;
     margin-top: 5px;
     margin-left: -30px;
@@ -260,7 +248,7 @@ margin-top: 10px;
     padding-right: 100px;
 }
 
-.nearAnniversary-img img{
+.nearAnniversary_img img{
     margin-left: -30px;
     margin-top:-5px;
     position: absolute;
@@ -320,7 +308,7 @@ margin-top: 10px;
     position: relative;
     font-weight: bold;
 }
-.webToonShortCutMenu-img--wrap{
+.webToonShortCutMenu_img_wrap{
     position: relative;
 }
 .webToonShortCutMenu img{
@@ -331,7 +319,7 @@ margin-top: 10px;
     margin-top: -135px;
     margin-left: -60px;
 }
-.recommendissueTopicPan{
+.recommendIssueTopicPan{
     display: block;
 }
 .issueTopicPanTitleText {
@@ -342,7 +330,7 @@ margin-top: 10px;
 .issueTopicPanTitleText span{
     font-weight: bold;
     font-size: 15px;
-    font-family: "Agency FB";
+    font-family: "Agency FB", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Apple SD Gothic Neo", Arial, sans-serif;
 }
 .issueTopicPanTitleText a{
     font-weight: lighter;
@@ -352,20 +340,20 @@ margin-top: 10px;
 }
 
 
-.pan-item-list{
+.pan_item_list{
     display: flex;
     flex-wrap: wrap;
     /*margin: 1rem 5rem;*/
 }
-.pan-list{
+.pan_list{
     box-sizing : border-box;
     width:50%;
     padding: 0.2rem;
 }
-.pan-list:nth-child(4n){
+.pan_list:nth-child(4n){
     margin-right: 0;
 }
-.pan-list-link{
+.pan_list_link{
     display: flex;
     align-items: center;
     padding:0.3rem;
@@ -374,15 +362,15 @@ margin-top: 10px;
     text-decoration: none;
     color: #828282;
 }
-.pan-list-img{
+.pan_list_img{
     background-color: inherit;
     width: 17%;
     margin-right: 10px;
     padding: 3px;
 }
 
-.pan-list-content{
-    font-siez : 0.8rem;
+.pan_list_content{
+    font-size : 0.8rem;
     text-decoration: none;
 }
 .noticeUpdateApp{
@@ -402,7 +390,7 @@ margin-top: 10px;
 .noticeUpdateApp span{
     display: inline-block;
     font-size: 14px;
-    font-family: "Arial Narrow";
+    font-family: "Arial Narrow", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Apple SD Gothic Neo", Arial, sans-serif;
     font-weight: bold;
     margin-left: 10px;
     color: #6e6e6e;
@@ -445,5 +433,34 @@ margin-top: 10px;
     text-align: center;
     font-size: 1.3em;
     font-weight: bolder;
-    font-family: Impact;
+    font-family: Impact, -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Apple SD Gothic Neo", Arial, sans-serif;
+}
+.weelyWeatherInfo{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+}
+.weelyWeatherInfo_box{
+    flex: 1;
+}
+.weeklyWeather_border{
+    width: 1px;
+    height: 20px;
+    border-right: #6e6e6e;
+    border-right-style: solid;
+    margin: auto;
+}
+.weeklyWeather_img{
+    width: 30px;
+    height: 30px;
+    background-color: black;
+    margin: 10px auto 10px;
+    border-radius: 20px;
+}
+.today{
+    width: 100%;
+    height: 100%;
+    background-color: #989898;
+    border-radius: 20px;
 }
