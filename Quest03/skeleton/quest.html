@@ -33,8 +33,8 @@
 		</section>
 
 		<script>
-			var row1Squares = document.querySelectorAll('.row1 .square');
-			for(var node of row1Squares) {
+ 			let row1Squares = document.querySelectorAll('.row1 .square');
+			for(let node of row1Squares) {
 				node.addEventListener('click',function () {
 					if(node.getAttribute('style')){
 						node.removeAttribute('style');
@@ -44,9 +44,9 @@
 				});
 			}
 
-			var row2Squares = document.querySelectorAll('.row2 .square');
+			let row2Squares = document.querySelectorAll('.row2 .square');
 
-			for(var node of row2Squares) {
+			for(let node of row2Squares) {
 				node.addEventListener('click',function () {
 					if(node.classList.contains('enabled')){
 						node.classList.remove('enabled');
@@ -56,9 +56,6 @@
 				})
 
 			}
-			let style = document.createElement('style');
-			style.type = 'text/css';
-			style.innerHTML = '1stRowSquare{ background-color:yellow;}';
 
 		</script>
 	</body>
