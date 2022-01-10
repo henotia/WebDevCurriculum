@@ -2,15 +2,22 @@
     margin: 0;
     padding: 0;
 }
+
 img {
     width: 100%;
 }
+
+
 :root {
     --main-color: #19ce60;
 }
+
+
 li {
     list-style: none;
 }
+
+
 body{
     background-color: #e5e5e5;
     margin: 0 auto;
