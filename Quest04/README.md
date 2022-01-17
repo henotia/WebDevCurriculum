@@ -120,12 +120,26 @@
           - ![img_8.png](img_8.png)
           - `kim` 객체가 `eyes`를 직접 가지고 있지 않기 때문에 `eyes` 속성을 찾을 때까지 상위 프로토타입을 탐색한다. 최상위인 `Object`의 `Prototype Object`까지 도달했는데도 못찾을 경우 `undefined`를 리턴한다. 이렇게 `__proto__`속성을 통해 상위 프로토타입과 연결되어 있는 형태를 __프로토타입 체인__ 이라고 한다 .
   * 자바스크립트 클래스
-    * 생성자
-    * 멤버 함수
-    * 멤버 변수
+  자바스크립트 클래스 실무에선 사용자나 물건같이 동일한 종류의 객체를 여러 개 생성해야 하는 경우가 잦다. 이럴 때 `new`연사자와 생성자 함수에서 배운 `new funciton`을 사용할 수 있다.
+  여기에 더하여 모던 자바스크립트에서 도입된 `클래스`라는 문법을 사용하면 객체지향 프로그래밍에서 사용되는 다양한 기능을 자바스크립트에서도 사용할 수 있다.
+```javascript
+  class myClass{
+    //여러 메소드를 정의할 수 있음.
+  constructor(){..}
+  method1(){}
+  method2(){}
+  method3(){}
+  ...
+             } 
+```
+
+  * 생성자
+  * 
+  * 멤버 함수
+  * 멤버 변수
   * 정보의 은폐
   * 다형성
-* 코드의 재사용
+  * 코드의 재사용
 
 ## Resources
 * [MDN - Classes](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Classes)
