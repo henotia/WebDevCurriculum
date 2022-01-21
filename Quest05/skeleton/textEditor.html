@@ -1,0 +1,34 @@
+<
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+<div class="edit_panel">
+    <div class="textEdit_box">
+        <ul class="edit_tool_list">
+            <li style="font-weight: bolder"><a class="editor_tool_button" onclick="document.execCommand('bold')">B</a>
+            </li>
+            <li style="font-style: italic"><a class="editor_tool_button" onclick="document.execCommand('italic')">I</a>
+            </li>
+            <li style="text-decoration: underline"><a class="editor_tool_button"
+                                                      onclick="document.execCommand('underline')">U</a></li>
+            <li style="text-decoration: line-through"><a class="editor_tool_button"
+                                                         onclick="document.execCommand('strikeThrough')">S</a></li>
+            <li><a class="editor_tool_button" onclick="document.execCommand('justifyLeft')">Left</a></li>
+            <li><a class="editor_tool_button" onclick="document.execCommand('justifyCenter')">Center</a></li>
+            <li><a class="editor_tool_button" onclick="document.execCommand('justifyRight')">Right</a></li>
+        </ul>
+    </div>
+    <div class="textArea_box" style="user-select: none">
+        <div class="textArea" contenteditable="true" style="resize: none; user-select: none">
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+

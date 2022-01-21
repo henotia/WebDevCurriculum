@@ -1,3 +1,122 @@
 * {
-	/* TODO: 필요한 CSS를 채워넣어 보세요! */
+    margin: 0;
+    padding: 0;
+}
+
+
+
+body{
+    background-color: white;
+    margin: 0 auto;
+    /*width: 600px;*/
+}
+
+
+
+/*  메뉴바  CSS*/
+#menuBar{
+    position: relative;
+    background-color: #989898;
+    height: 5%;
+    width: 100%;
+}
+
+.fileMenu_button{
+    background-color: #989898;
+    cursor: pointer;
+    user-select: none;
+    left: 510px;
+}
+.fileMenu_button:hover{
+    animation-delay: 0.5s;
+    transition-timing-function: ease-out;
+    transition-duration: 0.5s;
+    color: goldenrod;
+}
+
+/* 드랍다운 메뉴 */
+#menu_drop{
+    position: absolute;
+    z-index: 10;
+    background-color: #989898;
+}
+.fileMenu_button{
+    display: block;
+}
+
+/*탭 박스*/
+#tabList_box{
+    width: 90%;
+    height: 10%;
+    background-color: #c7d5e5;
+    display: flex;
+}
+.tab{
+    user-select: none;
+    cursor: pointer;
+    border-width: 1px;
+    border-style: solid;
+}
+
+#content_box{
+    width: 100vw;
+    height: 100vw;
+}
+
+.edit_panel{
+    margin-left: 1%;
+    width: 95%;
+    height: 100%;
+    background: yellow;
+}
+.textEdit_box{
+    width: 100px;
+    height: 100px;
+    margin-left: 50%;
+}
+
+ul{
+    display: flex;
+    justify-items: center;
+    justify-content: space-evenly;
+    background-color: #6e6e6e;
+}
+
+li{
+    padding: 1%;
+    list-style: none;
+    cursor: pointer;
+}
+li:hover{
+    background-color: #ffc107;
+    animation-delay: 3s;
+    color: white;
+    transition-timing-function: ease-out;
+    transition-duration: 1s;
+}
+.textArea_box{
+    width: inherit;
+    height: inherit;
+    border-color: black;
+    border-width: 1px;
+    border-style: solid;
+    background-color: #ffc107;
+}
+.textArea{
+    width: 500px;
+    height: 500px;
+    border-color: black;
+    border-width: 1px;
+    border-style: solid;
+    background-color: #ffc107;
+}
+.tabs{
+    cursor: pointer;
+}
+.tabs:hover{
+    background-color: #ffc107;
+    animation-delay: 3s;
+    color: white;
+    transition-timing-function: ease-out;
+    transition-duration: 1s;
 }
