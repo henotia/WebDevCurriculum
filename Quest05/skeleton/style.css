@@ -1,3 +1,64 @@
 * {
-	/* TODO: 필요한 CSS를 채워넣어 보세요! */
+
+}
+
+/* 글로벌 */
+body {
+    margin: 0;
+}
+
+/* 노트패드 */
+#notepad {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+}
+/* 사이드 메뉴 */
+#sidebar {
+    flex: 0 300px;
+}
+#sidebar #files {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+#sidebar .file {
+    cursor: pointer;
+    border: 1px solid black;
+    height: 40px;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+}
+
+/* 에디터 전체 영역 */
+#editor-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 탭 */
+#tab-area {
+    display: flex;
+    height: 40px;
+}
+#tab-area .tab {
+    min-width: 100px;
+    border: 1px solid black;
+    margin-right: 4px;
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    cursor: pointer;
+}
+
+#tab-area .tab.active {
+    font-weight: bold;
+    background: rgba(0, 0, 0, .1);
+}
+
+/* 텍스트 에디터 */
+#editor {
+    height: calc(100vh - 40px);
 }
