@@ -57,38 +57,37 @@ class Notepad {
     }
 
     #commandInit() {
+        const text = document.getElementById("editor").textContent;
         this.#command = new Command();
 
         this.#command.onNewFile = () => {
             const filename = prompt("만들 파일 이름");
             if (!filename.trim()) alert(" 파일명을 입력하세요.");
-
             if(!this.#duplicateNameCheck(filename)){
-
             const file = new File(filename);
-                console.log("file====>"+file);
             this.#files.push(file);
-            console.log("this.#files====>"+this.#files);
             this.#sidebarUpdate();
             }
         }
         this.#command.onLoad = () => {
-            const filename = prompt("불러올 파일 이름은?");
+            const filename = prompt("불러올 파일 이름은?").trim();
             const loaded = new File(filename).load(filename);
             this.#files.push(loaded);
-            console.log(this.#files);
             if (!this.#duplicateNameCheck(filename)){
             this.#sidebarUpdate();
             }
         }
 
         this.#command.onSave = () => {
-            const filename = document.getElementsByClassName('active')[0].textContent;
-            const text = document.getElementById("editor").textContent;
             console.log("save");
+            const filename = document.getElementsByClassName('active')[0].textContent;
             new File().save(filename,text);
         }
-        this.#command.onSaveAs = () => console.log("save as");
+        this.#command.onSaveAs = () => {
+            console.log("save as");
+            const wannaChangeFilename = prompt("다른이름으로 저장할 이름").trim();
+            new File().update(wannaChangeFilename,text);
+        };
     }
 
     #tabInit() {
@@ -120,16 +119,26 @@ class Tab {
     onTabClick(callback) {
         this.callback = callback;
     }
-
     render(openFiles, activeFile) {
         const $tabs = openFiles.map(file => {
+            const closeButtons = document.createElement("button");
+            closeButtons.classList.add("closeButton");
+
             const tabItem = document.createElement("div");
             tabItem.classList.add("tab");
+
             if (file.name === activeFile.name) {
                 this.activeFile = activeFile;
                 tabItem.classList.add("active");
             }
+            closeButtons.innerText = "X";
             tabItem.innerHTML = file.name;
+            tabItem.append(closeButtons);
+
+            closeButtons.onclick = (event)=> {
+                event.stopImmediatePropagation();
+                event.target.parentElement.remove();
+            }
 
             tabItem.onclick = () => {
                 this.activeFile = file;
@@ -151,15 +160,17 @@ class File {
         this.text = text;
     }
 
-    update(text) {
+    update(filename,text) {
         this.text = text;
         this.isEdited = true;
+        localStorage.setItem(filename,text);
+        alert("다른이름으로 저장 완료")
     }
 
     save(filename,text) {
         this.isEdited = false;
         console.log(filename);
-        localStorage.setItem(filename,"");// 내용 저장 기능 필요. // 변수 안에 넣어서 사용하려면 어떤 클래스에서 선언해서 관리할래? 새로 클래스 메소드를 파는건 어떤가?
+        localStorage.setItem(filename,text);// 내용 저장 기능 필요. // 변수 안에 넣어서 사용하려면 어떤 클래스에서 선언해서 관리할래? 새로 클래스 메소드를 파는건 어떤가?
         alert("저장완료");
     }
 
