@@ -56,9 +56,7 @@ class Notepad {
     #duplicateNameCheck(filename) {
         const hasSameFile = this.#files.some(file => file.name === filename);
         if (hasSameFile) {
-            console.log(hasSameFile);
             alert("같은 이름이 이미 존재합니다.");
-            console.log(this.#files[0])
         }
         return hasSameFile;
     }
@@ -78,18 +76,18 @@ class Notepad {
             }
         }
         this.#command.onLoad = () => {
-            const filename = prompt("불러올 파일 이름은?").trim()
+            const filename = prompt("불러올 파일 이름은?").trim();
+            const file = new File();
             for (let i = 0; i < localStorage.length; i++) {
                 if (localStorage.key(i) == filename) {
-                    const loaded = new File(filename).load(filename);
-                    this.#files.push(loaded);
                     if (!this.#duplicateNameCheck(filename)){
+                        const loaded = file.load(filename);
+                        this.#files.push(loaded);
                         this.#sidebarUpdate();
                         break;
                      }
                 }else {
                     alert("저장되어있지 않는 파일이름입니다.");
-                    console.log("111");
                     break;
             }
             }
