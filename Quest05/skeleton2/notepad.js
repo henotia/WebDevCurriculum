@@ -77,11 +77,10 @@ class Notepad {
         }
         this.#command.onLoad = () => {
             const filename = prompt("불러올 파일 이름은?").trim();
-            const file = new File();
             for (let i = 0; i < localStorage.length; i++) {
                 if (localStorage.key(i) == filename) {
                     if (!this.#duplicateNameCheck(filename)){
-                        const loaded = file.load(filename);
+                        const loaded = new File().load(filename);
                         this.#files.push(loaded);
                         this.#sidebarUpdate();
                         break;
