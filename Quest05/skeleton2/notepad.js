@@ -2,11 +2,11 @@ class Notepad {
     #files = [];
     #command;
     #tab;
+    #editor;
+
     $sidebar;
     activeFile;
     openFiles = [];
-
-    clickedListItem = [];
 
     constructor() {
         this.init();
@@ -16,6 +16,7 @@ class Notepad {
         this.#sidebarInit();
         this.#commandInit();
         this.#tabInit();
+        this.#editorInit();
         this.render();
     }
 
@@ -34,15 +35,12 @@ class Notepad {
             fileItem.classList.add("file");
 
             fileItem.onclick = (event) => {
-                let clickedFileName = event.target.textContent;
-                let clickedList = new File(clickedFileName);
 
                 this.activeFile = file;
 
                 const isAlreadyOpened = this.openFiles.find(openFile => openFile.name === file.name);
                 if (!isAlreadyOpened) {
                     this.openFiles.push(file);
-                    this.clickedListItem.push(clickedList);
                 }
                 this.#tabUpdate();
             }
@@ -69,26 +67,26 @@ class Notepad {
         this.#command.onNewFile = () => {
             const filename = prompt("만들 파일 이름");
             if (!filename.trim()) alert(" 파일명을 입력하세요.");
-            if(!this.#duplicateNameCheck(filename)){
-            const file = new File(filename);
-            this.#files.push(file);
-            this.#sidebarUpdate();
+            if (!this.#duplicateNameCheck(filename)) {
+                const file = new File(filename);
+                this.#files.push(file);
+                this.#sidebarUpdate();
             }
         }
         this.#command.onLoad = () => {
             const filename = prompt("불러올 파일 이름은?").trim();
             for (let i = 0; i < localStorage.length; i++) {
                 if (localStorage.key(i) == filename) {
-                    if (!this.#duplicateNameCheck(filename)){
+                    if (!this.#duplicateNameCheck(filename)) {
                         const loaded = new File().load(filename);
                         this.#files.push(loaded);
                         this.#sidebarUpdate();
                         break;
-                     }
-                }else {
+                    }
+                } else {
                     alert("저장되어있지 않는 파일이름입니다.");
                     break;
-            }
+                }
             }
         }
 
@@ -96,13 +94,13 @@ class Notepad {
             console.log("save");
             const filename = document.getElementsByClassName('active')[0].textContent.split('X')[0];
             text = document.getElementById("editor").textContent;
-            new File().save(filename,text);
+            new File().save(filename, text);
         }
         this.#command.onSaveAs = () => {
             console.log("save as");
             const wannaChangeFilename = prompt("다른이름으로 저장할 이름").trim();
             text = document.getElementById("editor").textContent;
-            new File().update(wannaChangeFilename,text);
+            new File().update(wannaChangeFilename, text);
         };
     }
 
@@ -111,13 +109,19 @@ class Notepad {
         this.#tab.onTabClick((activeFile) => {
             this.activeFile = activeFile;
             this.#tabUpdate();
+            this.#editorUpdate();
         });
     }
 
     #tabUpdate() {
         this.#tab.render(this.openFiles, this.activeFile);
     }
-
+    #editorInit(){
+        this.#editor = new Editor(this.activeFile);
+    }
+    #editorUpdate(){
+        this.#editor.render(this.activeFile);
+    }
     render() {
         this.#command.render();
     }
@@ -153,12 +157,12 @@ class Tab {
             tabItem.innerHTML = file.name;
             tabItem.append(closeButtons);
 
-            closeButtons.onclick = (event)=> {
+            closeButtons.onclick = (event) => {
                 event.stopImmediatePropagation();
                 let removingTabName = event.target.parentElement.textContent.split('X')[0];
                 for (let i = 0; i < notepad.openFiles.length; i++) {
-                    if (notepad.openFiles[i].name === removingTabName){
-                        notepad.openFiles.splice(i,1);
+                    if (notepad.openFiles[i].name === removingTabName) {
+                        notepad.openFiles.splice(i, 1);
                     }
                 }
                 event.target.parentElement.remove();
@@ -185,16 +189,16 @@ class File {
         this.text = text;
     }
 
-    update(filename,text) {
+    update(filename, text) {
         this.text = text;
         this.isEdited = true;
-        localStorage.setItem(filename,text);
+        localStorage.setItem(filename, text);
         alert("다른이름으로 저장 완료")
     }
 
-    save(filename,text) {
+    save(filename, text) {
         this.isEdited = false;
-        localStorage.setItem(filename,text);// 내용 저장 기능 필요. // 변수 안에 넣어서 사용하려면 어떤 클래스에서 선언해서 관리할래? 새로 클래스 메소드를 파는건 어떤가?
+        localStorage.setItem(filename, text);// 내용 저장 기능 필요. // 변수 안에 넣어서 사용하려면 어떤 클래스에서 선언해서 관리할래? 새로 클래스 메소드를 파는건 어떤가?
         alert("저장완료");
     }
 
@@ -208,10 +212,22 @@ class File {
 
 class Command {
     commands = [
-        {id: "new-file",label: "새 파일",callback: () => {} },
-        {id: 'load', label: '로드', callback: () => {} },
-        {id: 'save', label: '저장', callback: () => {} },
-        {id: 'save-as', label: '다른 이름으로 저장', callback: () => {}  }
+        {
+            id: "new-file", label: "새 파일", callback: () => {
+            }
+        },
+        {
+            id: 'load', label: '로드', callback: () => {
+            }
+        },
+        {
+            id: 'save', label: '저장', callback: () => {
+            }
+        },
+        {
+            id: 'save-as', label: '다른 이름으로 저장', callback: () => {
+            }
+        }
     ];
 
     constructor() {
@@ -268,4 +284,13 @@ class Command {
 }
 
 class Editor {
+    activeFile;
+    constructor(activeFile) {
+        this.$editorEl = document.getElementById("editor");
+        this.activeFile = activeFile;
+    }
+    render(activeFile){
+        this.$editorEl.innerText = "";
+        this.$editorEl.innerText = activeFile.text;
+    }
 }
