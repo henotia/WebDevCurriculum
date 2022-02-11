@@ -56,14 +56,17 @@ class Notepad {
     #duplicateNameCheck(filename) {
         const hasSameFile = this.#files.some(file => file.name === filename);
         if (hasSameFile) {
+            console.log(hasSameFile);
             alert("같은 이름이 이미 존재합니다.");
+            console.log(this.#files[0])
         }
         return hasSameFile;
     }
 
     #commandInit() {
-        const text = document.getElementById("editor").textContent;
+        // const text = document.getElementById("editor").textContent;
         this.#command = new Command();
+        let text;
 
         this.#command.onNewFile = () => {
             const filename = prompt("만들 파일 이름");
@@ -75,22 +78,33 @@ class Notepad {
             }
         }
         this.#command.onLoad = () => {
-            const filename = prompt("불러올 파일 이름은?").trim();
-            const loaded = new File(filename).load(filename);
-            this.#files.push(loaded);
-            if (!this.#duplicateNameCheck(filename)){
-            this.#sidebarUpdate();
+            const filename = prompt("불러올 파일 이름은?").trim()
+            for (let i = 0; i < localStorage.length; i++) {
+                if (localStorage.key(i) == filename) {
+                    const loaded = new File(filename).load(filename);
+                    this.#files.push(loaded);
+                    if (!this.#duplicateNameCheck(filename)){
+                        this.#sidebarUpdate();
+                        break;
+                     }
+                }else {
+                    alert("저장되어있지 않는 파일이름입니다.");
+                    console.log("111");
+                    break;
+            }
             }
         }
 
         this.#command.onSave = () => {
             console.log("save");
             const filename = document.getElementsByClassName('active')[0].textContent.split('X')[0];
+            text = document.getElementById("editor").textContent;
             new File().save(filename,text);
         }
         this.#command.onSaveAs = () => {
             console.log("save as");
             const wannaChangeFilename = prompt("다른이름으로 저장할 이름").trim();
+            text = document.getElementById("editor").textContent;
             new File().update(wannaChangeFilename,text);
         };
     }
