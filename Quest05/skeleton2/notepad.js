@@ -6,6 +6,8 @@ class Notepad {
     activeFile;
     openFiles = [];
 
+    clickedListItem = [];
+
     constructor() {
         this.init();
     }
@@ -31,12 +33,16 @@ class Notepad {
             fileItem.innerHTML = file.name;
             fileItem.classList.add("file");
 
-            fileItem.onclick = () => {
+            fileItem.onclick = (event) => {
+                let clickedFileName = event.target.textContent;
+                let clickedList = new File(clickedFileName);
+
                 this.activeFile = file;
 
                 const isAlreadyOpened = this.openFiles.find(openFile => openFile.name === file.name);
                 if (!isAlreadyOpened) {
                     this.openFiles.push(file);
+                    this.clickedListItem.push(clickedList);
                 }
                 this.#tabUpdate();
             }
@@ -49,7 +55,6 @@ class Notepad {
     //이름 중복 파일 체크
     #duplicateNameCheck(filename) {
         const hasSameFile = this.#files.some(file => file.name === filename);
-        console.log(hasSameFile);
         if (hasSameFile) {
             alert("같은 이름이 이미 존재합니다.");
         }
@@ -80,7 +85,7 @@ class Notepad {
 
         this.#command.onSave = () => {
             console.log("save");
-            const filename = document.getElementsByClassName('active')[0].textContent;
+            const filename = document.getElementsByClassName('active')[0].textContent.split('X')[0];
             new File().save(filename,text);
         }
         this.#command.onSaveAs = () => {
@@ -119,6 +124,7 @@ class Tab {
     onTabClick(callback) {
         this.callback = callback;
     }
+
     render(openFiles, activeFile) {
         const $tabs = openFiles.map(file => {
             const closeButtons = document.createElement("button");
@@ -131,13 +137,21 @@ class Tab {
                 this.activeFile = activeFile;
                 tabItem.classList.add("active");
             }
+
             closeButtons.innerText = "X";
             tabItem.innerHTML = file.name;
             tabItem.append(closeButtons);
 
             closeButtons.onclick = (event)=> {
                 event.stopImmediatePropagation();
+                let removingTabName = event.target.parentElement.textContent.split('X')[0];
+                for (let i = 0; i < notepad.openFiles.length; i++) {
+                    if (notepad.openFiles[i].name === removingTabName){
+                        notepad.openFiles.splice(i,1);
+                    }
+                }
                 event.target.parentElement.remove();
+
             }
 
             tabItem.onclick = () => {
@@ -169,7 +183,6 @@ class File {
 
     save(filename,text) {
         this.isEdited = false;
-        console.log(filename);
         localStorage.setItem(filename,text);// 내용 저장 기능 필요. // 변수 안에 넣어서 사용하려면 어떤 클래스에서 선언해서 관리할래? 새로 클래스 메소드를 파는건 어떤가?
         alert("저장완료");
     }
