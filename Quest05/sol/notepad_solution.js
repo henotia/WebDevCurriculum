@@ -2,9 +2,11 @@ class Notepad {
     #files = [];
     #command;
     #tab;
+    #indicator;
     $sidebar;
     activeFile;
     openFiles = [];
+
 
     constructor() {
         this.init();
@@ -14,6 +16,7 @@ class Notepad {
         this.#sidebarInit();
         this.#commandInit();
         this.#tabInit();
+        this.#indicatorInit();
         this.render();
     }
 
@@ -82,6 +85,10 @@ class Notepad {
 
     #tabUpdate() {
         this.#tab.render(this.openFiles, this.activeFile);
+        this.#indicator.render();
+    }
+    #indicatorInit(){
+        this.#indicator = new Indicator();
     }
 
     render() {
@@ -92,7 +99,7 @@ class Notepad {
 class Tab {
     activeFile;
     callback;
-
+    indicator;
     constructor(activeFile) {
         this.$tab = document.getElementById('tab-area');
         this.activeFile = activeFile;
@@ -218,6 +225,26 @@ class Command {
 class Editor {
     constructor() {
     }
+}
+class Indicator{
+    constructor() {
+        this.$el = document.getElementsByClassName("tab");
+        console.log("Indicator Constructor");
+    }
+
+    #makeIndicatorCircle(){
+        const indicatorCircle = document.createElement('div');
+        indicatorCircle.classList.add("indicatorCircle");
+        console.log("indicator #makeIndicator");
+        return indicatorCircle;
+    }
+    render(){
+        const indicator = this.#makeIndicatorCircle;
+        this.$el.append(indicator);
+        console.log("indicator render");
+
+    }
+
 }
 
 

@@ -3,6 +3,7 @@ class Notepad {
     #command;
     #tab;
     #editor;
+    #indicator;
 
     $sidebar;
     activeFile;
@@ -17,6 +18,7 @@ class Notepad {
         this.#commandInit();
         this.#tabInit();
         this.#editorInit();
+        this.#indicatorInit();
         this.render();
     }
 
@@ -104,6 +106,10 @@ class Notepad {
         };
     }
 
+    #indicatorInit(){
+        this.#indicator = new Indicator();
+    }
+
     #tabInit() {
         this.#tab = new Tab(this.activeFile);
         this.#tab.onTabClick((activeFile) => {
@@ -115,13 +121,16 @@ class Notepad {
 
     #tabUpdate() {
         this.#tab.render(this.openFiles, this.activeFile);
+        this.#indicator.render();
     }
     #editorInit(){
-        this.#editor = new Editor(this.activeFile);
+        // this.#editor = new Editor(this.activeFile);
+        this.#editor = new Editor();
     }
     #editorUpdate(){
-        this.#editor.render(this.activeFile);
+        this.#editor.render(this.activeFile,this.openFiles);
     }
+
     render() {
         this.#command.render();
     }
@@ -285,12 +294,49 @@ class Command {
 
 class Editor {
     activeFile;
-    constructor(activeFile) {
+    // constructor(activeFile) {
+    constructor(activeFile, openFiles) {
         this.$editorEl = document.getElementById("editor");
+        this.$el_editorArea = document.getElementById("editor-area");
         this.activeFile = activeFile;
+    }
+    #makeEditor(){
+        const editor = document.createElement("div");
+        editor.setAttribute("contentEditable","true");
+
     }
     render(activeFile){
         this.$editorEl.innerText = "";
         this.$editorEl.innerText = activeFile.text;
     }
 }
+
+class Indicator{
+    constructor() {
+        this.$el_tab = document.getElementsByClassName("tab");
+        console.log("Indicator Constructor");
+    }
+
+    #makeIndicatorCircle(){
+        const indicatorCircle = document.createElement('button');
+        indicatorCircle.classList.add("indicatorCircle");
+        indicatorCircle.setAttribute("disabled","disabled");
+        console.log("indicator #makeIndicator");
+        return indicatorCircle;
+    }
+
+    render(){
+
+        for (let i = 0; i < this.$el_tab.length; i++) {
+            const indicators = this.#makeIndicatorCircle();
+            this.$el_tab.item(i).prepend(indicators);
+            console.log(i);
+        }
+        console.log("indicator render");
+    }
+
+}
+/*
+<div id="editor" contentEditable="true">
+    텍스트 에디터dsfsdf
+</div>*/

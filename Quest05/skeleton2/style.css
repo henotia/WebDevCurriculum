@@ -38,3 +38,8 @@ flex: 0 300px;
 .closeButton:hover{
     background-color: #ffc107;
 }
+
+.indicatorCircle{
+    width: 15px;
+    height: 15px;
+}
