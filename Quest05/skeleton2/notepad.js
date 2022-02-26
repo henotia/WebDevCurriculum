@@ -95,19 +95,22 @@ class Notepad {
         this.#command.onSave = () => {
             console.log("save");
             const filename = document.getElementsByClassName('active')[0].textContent.split('X')[0];
-            text = document.getElementById("editor").textContent;
+            text = document.getElementById("editor").value;
             new File().save(filename, text);
         }
         this.#command.onSaveAs = () => {
             console.log("save as");
             const wannaChangeFilename = prompt("다른이름으로 저장할 이름").trim();
-            text = document.getElementById("editor").textContent;
+            text = document.getElementById("editor").value;
             new File().update(wannaChangeFilename, text);
         };
     }
 
-    #indicatorInit(){
+    #indicatorInit() {
         this.#indicator = new Indicator();
+    }
+
+    #indicatorUpdate() {
     }
 
     #tabInit() {
@@ -115,20 +118,25 @@ class Notepad {
         this.#tab.onTabClick((activeFile) => {
             this.activeFile = activeFile;
             this.#tabUpdate();
-            this.#editorUpdate();
+            this.#editorUpdate(this.activeFile);
         });
     }
 
     #tabUpdate() {
         this.#tab.render(this.openFiles, this.activeFile);
+        //workHere 에디터 저장 되니까 이제 탭 변경했을때 해당 내용으로 뜨게 해줘야함.
+        this.#editor.changeSensor(this.activeFile, this.openFiles);
+        this.#indicatorUpdate();
         this.#indicator.render();
     }
-    #editorInit(){
+
+    #editorInit() {
         // this.#editor = new Editor(this.activeFile);
         this.#editor = new Editor();
     }
-    #editorUpdate(){
-        this.#editor.render(this.activeFile,this.openFiles);
+
+    #editorUpdate() {
+        this.#editor.render(this.activeFile, this.openFiles);
     }
 
     render() {
@@ -202,12 +210,14 @@ class File {
         this.text = text;
         this.isEdited = true;
         localStorage.setItem(filename, text);
+        document.querySelector(".active button").style.background = "none";
         alert("다른이름으로 저장 완료")
     }
 
     save(filename, text) {
         this.isEdited = false;
         localStorage.setItem(filename, text);// 내용 저장 기능 필요. // 변수 안에 넣어서 사용하려면 어떤 클래스에서 선언해서 관리할래? 새로 클래스 메소드를 파는건 어떤가?
+        document.querySelector(".active button").style.background = "none";
         alert("저장완료");
     }
 
@@ -294,38 +304,55 @@ class Command {
 
 class Editor {
     activeFile;
+    $editorEl;
+
     // constructor(activeFile) {
     constructor(activeFile, openFiles) {
         this.$editorEl = document.getElementById("editor");
-        this.$el_editorArea = document.getElementById("editor-area");
         this.activeFile = activeFile;
     }
-    #makeEditor(){
-        const editor = document.createElement("div");
-        editor.setAttribute("contentEditable","true");
 
+    changeSensor(activeFile, openFiles) {
+        this.$editorEl.onchange = function (e) {
+            if (openFiles.length > 0) {
+                for (let i = 0; i < openFiles.length; i++) {
+                    if (openFiles[i].name == activeFile.name) {
+                        const modifiedFile = new File(openFiles[i].name, e.target.value);
+                        openFiles.splice(i, 1);
+                        openFiles.push(modifiedFile);
+                        document.querySelector(".active button").style.background = "yellow";
+                    }
+                }
+            }
+        }
     }
-    render(activeFile){
-        this.$editorEl.innerText = "";
-        this.$editorEl.innerText = activeFile.text;
+
+    render(activeFile) {
+        this.$editorEl.value = "";
+        if (activeFile.text == undefined) {
+            this.$editorEl.value = "내용없음";
+        } else {
+            this.$editorEl.value = activeFile.text;
+        }
+        console.log(this.$editorEl.innerText = activeFile.text);
     }
 }
 
-class Indicator{
+class Indicator {
     constructor() {
         this.$el_tab = document.getElementsByClassName("tab");
         console.log("Indicator Constructor");
     }
 
-    #makeIndicatorCircle(){
+    #makeIndicatorCircle() {
         const indicatorCircle = document.createElement('button');
         indicatorCircle.classList.add("indicatorCircle");
-        indicatorCircle.setAttribute("disabled","disabled");
+        indicatorCircle.setAttribute("disabled", "disabled");
         console.log("indicator #makeIndicator");
         return indicatorCircle;
     }
 
-    render(){
+    render() {
 
         for (let i = 0; i < this.$el_tab.length; i++) {
             const indicators = this.#makeIndicatorCircle();
@@ -336,6 +363,7 @@ class Indicator{
     }
 
 }
+
 /*
 <div id="editor" contentEditable="true">
     텍스트 에디터dsfsdf
