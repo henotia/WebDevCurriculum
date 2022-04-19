@@ -251,6 +251,7 @@ class Command {
 
     constructor() {
         this.$el = document.getElementById("commands");
+        console.log(typeof this.commands);
     }
 
     #makeButton(command) {

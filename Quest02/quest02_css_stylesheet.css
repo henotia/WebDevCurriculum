@@ -22,6 +22,7 @@ flex-direction: column;
 }
 
 #searchBar{
+
     flex: content-box;
     display: flex;
     width: 30vw;

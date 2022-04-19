@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="./SignInForm.css">
+</head>
+<body>
+<div id="signIn_Form">
+    <label for="st_name">이름</label>
+    <input id="st_name"/>
+    <label for="st_phonenumber">연락처</label>
+    <input id="st_phonenumber"/>
+    <label for="st_address">주소</label>
+    <input id="st_address"/>
+    <div id='commands' class="commands"></div>
+</div>
+</body>
+<script>
+    class SignIn_Form {
+
+        #buttonCommand;
+
+        constructor() {
+            this.init();
+        }
+
+        init() {
+            this.#buttonCommandInit();
+
+            this.render();
+        }
+
+        #buttonCommandInit() {
+            this.#buttonCommand = new ButtonCommand();
+            this.#buttonCommand.onSubmit = () => {
+                this.#buttonCommand.submit();
+            }
+        }
+
+        render() {
+            this.#buttonCommand.render();
+        }
+    }
+
+    class SignIn_Content {
+        st_name;
+        st_phonenumber;
+        st_address;
+
+        constructor(st_name, st_phonenumber, st_address) {
+            this.st_name = st_name;
+            this.st_phonenumber = st_phonenumber;
+            this.st_address = st_address;
+        }
+
+    }
+
+    class ButtonCommand {
+        commands = [
+            {
+                id: "submit", label: "제출", callback: () => {
+                }
+            },
+            {
+                id: "cancel", label: "취소", callback: () => {
+                }
+            }
+        ];
+
+        #xmlHttpRequestSender;
+
+        constructor() {
+            this.#xmlHttpRequestSenderInit();
+            this.$el_commands = document.getElementById("commands");
+        }
+
+        #xmlHttpRequestSenderInit() {
+            this.#xmlHttpRequestSender = new XmlHttpRequestSender();
+        }
+
+        #makeButton(command) {
+            const button = document.createElement("button");
+            button.id = command.id;
+            button.innerText = command.label;
+            button.onclick = command.callback;
+
+            return button;
+        }
+
+        submit() {
+            let signIn_Content;
+
+            const st_name = document.getElementById("st_name").value;
+            const st_phonenumber = document.getElementById("st_phonenumber").value;
+            const st_address = document.getElementById("st_address").value;
+
+            signIn_Content = new SignIn_Content(st_name, st_phonenumber, st_address);
+
+            console.log(JSON.stringify(signIn_Content));
+            this.#xmlHttpRequestSender.xmlRequestSend(signIn_Content);
+
+        }
+
+        set onSubmit(callback) {
+            const id = "submit";
+            this.commandFinder(callback, id);
+        }
+
+        set onCancel(callback) {
+            const id = "cancel";
+            this.commandFinder(callback, id);
+        }
+
+        commandFinder(callback, id) {
+            const command = this.commands.find(command => command.id === id);
+            if (command) {
+                command.callback = callback;
+            }
+        }
+
+        render() {
+            const buttons = this.commands.map(command => this.#makeButton(command));
+            this.$el_commands.append(...buttons);
+        }
+
+    }
+
+    class XmlHttpRequestSender {
+        xhr;
+
+        constructor() {
+            this.xhr = new XMLHttpRequest();
+        }
+
+        xmlRequestSend(content) {
+            console.log(JSON.parse(content));
+            this.xhr.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    alert("등록완료");
+                    location="http://localhost:8080/";
+                }
+            }// end of xhr.onreadystatechange
+            this.xhr.open("POST", "http://localhost:8080/sign/in_study.do");
+            this.xhr.setRequestHeader("Content-type", "application/json");
+            this.xhr.send(content);
+            console.log("Send Success");
+        }
+
+    }
+
+    let signIn_Form = new SignIn_Form();
+
+
+</script>
+</html>
