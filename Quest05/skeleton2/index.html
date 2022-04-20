@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./style.css">
+    <script src="./notepad.js"></script>
+</head>
+<body>
+<div id="notepad">
+    <div id="sidebar">
+        <div id='commands' class="commands" ></div>
+
+        <ul id="files"></ul>
+    </div>
+    <div id="editor-area">
+        <div id="tab-area"></div>
+        <!--<div id="editor" contentEditable="true">
+            텍스트 에디터dsfsdf
+        </div>-->
+        <input id="editor">텍스트 에디터</input>
+    </div>
+</div>
+<script>
+    let notepad = new Notepad();
+</script>
+</body>
+</html>

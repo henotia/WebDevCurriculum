@@ -1,0 +1,466 @@
+.searchBar{
+    display: block;
+    width: 100%;
+    height: 3rem;
+    position: relative;
+}
+.searchBar_input{
+    padding-left: 0.5rem;
+    width: 100%;
+    height: 100%;
+    border: 1px solid var(--main-color);
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+.searchBar_input::placeholder{
+    color: #ddd;
+}
+header #titleLogo{
+    text-align: center;
+    font-size: 2.5em;
+    font-weight: bolder;
+    font-family: Impact, -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Apple SD Gothic Neo", Arial, sans-serif;
+    color: var(--main-color);
+}
+.searchBar_input_icon_wrap{
+    position: absolute;
+    top:0;
+    right: 0;
+    width: 7rem;
+    height: inherit;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.icon{
+    font-size: 1.5rem;
+    color: var(--main-color);
+}
+.item-list{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 1rem 5rem;
+}
+.list{
+    box-sizing : border-box; /* 테두리와 안쪽 여백의 크기도 요소의 크기로 고려한다. 너비를 100픽셀로 설정하고 테두리와 안쪽 여백을 추가하면, 콘텐츠 영역이 줄어들어 총 너비 100픽셀으 유지한다. 대부분의 경우 이 편이 크기를 조절할 때 쉽다.*/
+                             /*content-box로 지정하면 기본 css 박스 크기 결정법을 사용한다. 요소의 너비를 100 픽셀로 설정하면 콘텐츠 영역 100픽셀 너비를 가지고, 테두리와 안쪽 여백은 이에 더해진다.*/
+    width:24%;
+    margin-right: calc(4%/3);
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+.list:nth-child(4n){
+    margin-right: 0;
+}
+.list-link{
+    display: flex;
+    justify-content: center;
+    padding:0.7rem;
+    border-radius: 1rem;
+    background-color: #f1f2f3;
+    margin-bottom: 0;
+}
+.list-content{
+    font-siez : 0.8rem
+}
+.a_gradeContainer{
+    width: inherit;
+    background-color: white;
+    margin: 10px;
+    padding:10px ;
+    border-radius: 10px;
+}
+.todayWeatherAndOnAir{
+    display: flex;
+    box-sizing: border-box;
+    justify-content: normal;
+}
+.wheatherPicture{
+    position: relative;
+    width: 70px;
+    height: 70px;
+    margin: auto;
+    background-image: url("../../Quest01/skeleton/img/weather/sp_icon_weather_35d9613d.png");
+    background-repeat: no-repeat;
+    background-size: 500px;
+}
+.wheatherPicture img{
+    position: absolute;
+    width: 465px;
+    height: 400px;
+    clip: rect(0px,66px,66px,0px);
+}
+.todayWeather{
+    position: relative;
+    left: -10px;
+    font-family: AcadEref, -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Apple SD Gothic Neo", Arial, sans-serif;
+    font-weight: lighter;
+    align-items: center;
+}
+.todayWeather a{
+    font-weight: bold;
+}
+.onAir{
+    padding-left: 20px;
+    width: 300px;
+    height: 70px;
+    border-left: solid 1px #828282;
+    display: flex;
+}
+.onAirTitle h4{
+    font-size: 20px;
+    font-weight: bolder;
+    color: red;
+}
+.onAirTitle a{
+    padding: 0px;
+    margin-top: -5px;
+    display: block;
+    font-size: 13px;
+    font-weight: bold;
+}
+.onAir_img_wrap{
+    display: flex;
+}
+.onAir img{
+    margin-left: 2%;
+    position: relative;
+    width: 30%;
+    border-radius: 20px;
+}
+
+.weatherSmokeInfoTitle{
+    display: flex;
+    align-items: center;
+}
+.weatherSmokeInfo div.weatherSmokeInfoTitle span{
+    display: block;
+    font-weight: bolder;
+    font-size: 20px;
+    margin-right: 10px;
+}
+.userAtPlace_img{
+    position: relative;
+    width: 20px;
+    height: 20px;
+    background-image: url("../../Quest01/skeleton/img/icons/sp_search_9655b415.png");
+    background-size: 500px,500px;
+    background-repeat: no-repeat;
+    background-position-x: -333px;
+    background-position-y: -396px;
+}
+
+.weatherSmokeInfoButtons{
+    margin-top: 10px;
+}
+.weatherSmokeInfoButtonSquare{
+    width: 130px;
+    height: 30px;
+    background-color: #c7d5e5;
+    border-width: 0;
+    color: #66707d;
+    font-weight: bold;
+
+}
+.aboutCovid19_wrap{
+    display: flex;
+    width: inherit;
+    height: inherit;
+}
+.aboutCovid19_status_wrap{
+    position: relative;
+    display: flex;
+    width: 280px;
+    border-right: groove 1px;
+}
+
+.covid19ConfirmedStatus_img_wrap{
+    position: relative;
+    width: 30px;
+    height: 30px;
+}
+
+.covid19ConfirmedStatus_img_wrap img{
+    position: absolute;
+    width: 365px;
+    height: 365px;
+    clip: rect(160px,250px,200px,200px);
+    margin-top: -170px;
+    margin-left: -210px;
+}
+
+.covid19ConfirmedStatus span:nth-child(1){
+    font-weight: bolder;
+}
+
+.covid19ConfirmedStatus span:nth-child(2){
+    display: block;
+    margin-top: 5px;
+    margin-left: -30px;
+    font-size: 13px;
+    color: #989898;
+    font-weight: bold;
+}
+
+.covid19FactCheckHere_wrap{
+    position: relative;
+    display: flex;
+}
+
+.covid19FactCheckHere_img_wrap{
+    padding-left: 10px;
+    position: relative;
+    width: 30px;
+    height: 30px;
+}
+
+.covid19FactCheckHere_img_wrap img{
+    position: absolute;
+    width: 365px;
+    height: 365px;
+    clip: rect(250px,280px,290px,250px);
+    margin-top: -260px;
+    margin-left: -250px;
+}
+.covid19FactCheckHere_title span:nth-child(1){
+    font-weight: bolder;
+}
+
+.covid19FactCheckHere_title span:nth-child(2){
+    display: block;
+    margin-top: 5px;
+    margin-left: -30px;
+    font-size: 13px;
+    color: #989898;
+    font-weight: bold;
+}
+
+
+.nearAnniversary{
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 100px;
+}
+
+.nearAnniversary_img img{
+    margin-left: -30px;
+    margin-top:-5px;
+    position: absolute;
+    width: 270px;
+    height: 270px;
+    clip: rect(0px,120px,35px,83px);
+    opacity: 70%;
+}
+
+.recommendOurServiceApp{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.recommendOurServiceApp-img{
+    position: relative;
+    /*top: 0;*/
+    /*right: 0;*/
+}
+.recommendOurServiceApp-img img{
+    position: absolute;
+    width: 270px;
+    height: 270px;
+    clip: rect(117px,100px,150px,65px);
+    margin-left: -60px;
+    margin-top: -134px;
+
+}
+.recommendOurServiceApp span{
+    position: relative;
+    margin-left: -90px;
+    font-weight: lighter;
+    font-size: small;
+    color: #828282;
+}
+.recommendOurServiceApp span#recommendOurServiceAppComment a{
+    font-weight: bold;
+    color: #000000;
+}
+.goUseOurApp{
+    background-color: white;
+    color: #74d0bf;
+    border-color: #74d0bf;
+    border-radius: 6px;
+    box-shadow: 0px 0px 0px 0px;
+    border-style: groove;
+}
+.webToonShortCutMenu{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-items: center;
+    justify-content: space-between;
+}
+
+.webToonShortCutMenu span{
+    position: relative;
+    font-weight: bold;
+}
+.webToonShortCutMenu_img_wrap{
+    position: relative;
+}
+.webToonShortCutMenu img{
+    position: absolute;
+    width: 270px;
+    height: 270px;
+    clip: rect(117px,60px,150px,40px);
+    margin-top: -135px;
+    margin-left: -60px;
+}
+.recommendIssueTopicPan{
+    display: block;
+}
+.issueTopicPanTitleText {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.issueTopicPanTitleText span{
+    font-weight: bold;
+    font-size: 15px;
+    font-family: "Agency FB", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Apple SD Gothic Neo", Arial, sans-serif;
+}
+.issueTopicPanTitleText a{
+    font-weight: lighter;
+    color: #828282;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+
+.pan_item_list{
+    display: flex;
+    flex-wrap: wrap;
+    /*margin: 1rem 5rem;*/
+}
+.pan_list{
+    box-sizing : border-box;
+    width:50%;
+    padding: 0.2rem;
+}
+.pan_list:nth-child(4n){
+    margin-right: 0;
+}
+.pan_list_link{
+    display: flex;
+    align-items: center;
+    padding:0.3rem;
+    border-radius: 1rem;
+    background-color: #f1f2f3;
+    text-decoration: none;
+    color: #828282;
+}
+.pan_list_img{
+    background-color: inherit;
+    width: 17%;
+    margin-right: 10px;
+    padding: 3px;
+}
+
+.pan_list_content{
+    font-size : 0.8rem;
+    text-decoration: none;
+}
+.noticeUpdateApp{
+    padding:15px;
+    align-items: center;
+}
+.noticeUpdateApp label{
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 10px;
+    border-color: var(--main-color);
+    padding:5px 10px 5px 10px;
+    font-size: 13px;
+    color: var(--main-color);
+    display: inline-block;
+}
+.noticeUpdateApp span{
+    display: inline-block;
+    font-size: 14px;
+    font-family: "Arial Narrow", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Apple SD Gothic Neo", Arial, sans-serif;
+    font-weight: bold;
+    margin-left: 10px;
+    color: #6e6e6e;
+}
+.footerMenuLinked{
+    margin: 70px auto 50px;
+    display: flex;
+    justify-content: center;
+    color: #828282;
+    flex-wrap: wrap;
+    width: 320px;
+}
+.footerMenuLinked a{
+    position: relative;
+    display: inline-block;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.goShownWholeService ,.goShownPersonalInfoPolicy{
+    position: relative;
+    width: max-content;
+    height: max-content;
+    border-left-width: 1px;
+    border-left-style: solid;
+    border-right-width: 1px;
+    border-right-style: solid;
+
+}
+.goShownPersonalInfoPolicy {
+    font-weight: bolder;
+}
+.footerComponyLogo{
+    margin: 0px auto 130px;
+    display: flex;
+    justify-content: center;
+    color: #828282;
+    flex-wrap: wrap;
+    width: 320px;
+
+    text-align: center;
+    font-size: 1.3em;
+    font-weight: bolder;
+    font-family: Impact, -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Apple SD Gothic Neo", Arial, sans-serif;
+}
+.weelyWeatherInfo{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+}
+.weelyWeatherInfo_box{
+    flex: 1;
+}
+.weeklyWeather_border{
+    width: 1px;
+    height: 20px;
+    border-right: #6e6e6e;
+    border-right-style: solid;
+    margin: auto;
+}
+.weeklyWeather_img{
+    width: 30px;
+    height: 30px;
+    background-color: black;
+    margin: 10px auto 10px;
+    border-radius: 20px;
+}
+.today{
+    width: 100%;
+    height: 100%;
+    background-color: #989898;
+    border-radius: 20px;
+}

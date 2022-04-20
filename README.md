@@ -1,8 +1,18 @@
-# Knowre Web Development Curriculum 2021
+# Knowre 웹개발 커리큘럼 - 4th Edition, 2021
 
 ## 소개
 * Knowre의 신입 웹 개발자 교육을 위한 웹 개발 교육 커리큘럼의 2021년 버전입니다.
 * 이 커리큘럼을 통해 신입 개발자들은 git, HTML, CSS, front-end JavaScript, node.js, MySQL, 그리고 더 나아가 선택된 몇 가지의 최신 웹 기술과 그 작동 원리에 대해 익히게 됩니다.
+
+
+### 광고
+
+* Knowre에서 수시로 신입/경력 엔지니어를 모시고 있습니다. [이 링크](https://www.wanted.co.kr/company/96) 를 참고해 주십시오!
+
+
+## 머리말
+
+* [머리말](./PREFACE.md)
 
 
 ## 목차
@@ -19,23 +29,23 @@
   * [Quest 06. 인터넷의 이해](./Quest06)
   * [Quest 07. node.js의 기초](./Quest07)
   * [Quest 08. 웹 API의 기초: REST와 CRUD](./Quest08)
-  * [Quest 09. 서버와 클라이언트의 대화](./Quest09) (AJAX/fetch()/async-await)
-  * [Quest 10. 인증의 이해](./Quest10) (쿠키, 세션, 토큰)
+  * [Quest 09. 서버와 클라이언트의 대화](./Quest09)
+  * [Quest 10. 인증의 이해](./Quest10)
   * [Quest 11. RDB의 기초와 ORM](./Quest11)
   * [Quest 12. 보안의 기초](./Quest12)
   * [Quest 13. 웹 API의 응용과 GraphQL](./Quest13)
   * [Quest 14. 정적 분석: 타입스크립트와 린트 시스템](./Quest14)
   * [Quest 15. 자동화된 테스트](./Quest15)
   * 프론트엔드 루트
-    * [Quest 16-F. 컴포넌트 기반 개발](./Quest16-F) (Vue와 vuex)
+    * [Quest 16-F. 컴포넌트 기반 개발](./Quest16-F)
     * [Quest 17-F. 번들링과 빌드 시스템](./Quest17-F)
-    * [Quest 18-F. 웹 프론트엔드 2021](./Quest18-F) (Modern CSS? PWA? SSR? SEO?)
+    * [Quest 18-F. 프로그레시브 웹앱](./Quest18-F)
     * [Quest 19-F. 웹 어셈블리의 기초](./Quest19-F)
   * 백엔드 루트
     * [Quest 16-B. 도커와 컨테이너](./Quest16-B)
     * [Quest 17-B. 배포 파이프라인](./Quest17-B)
     * [Quest 18-B. 서비스의 운영: 로깅과 모니터링](./Quest18-B)
-    * [Quest 19-B. 서버 아키텍쳐 패턴](./Quest19-B) (모노리틱, 마이크로서비스, 서버리스 등)
+    * [Quest 19-B. 서버 아키텍쳐 패턴](./Quest19-B)
   * [Quest 20. 세상 밖으로](./Quest20)
 
   </p>
